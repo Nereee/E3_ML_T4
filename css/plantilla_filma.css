@@ -1,0 +1,72 @@
+section {
+    margin: 7vh 5vw auto 4vw;
+}
+
+section img {
+    width: 50%;
+    padding-right: 25px;
+    max-width: 450px;
+    min-width: 250px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.infofilma {
+    display: flex;
+    flex-direction: row;
+}
+
+.erdikoa, .ezkuina {
+    font-size: 20px;
+}
+
+.erdikoa h3, .ezkuina h3 {
+    color: rgb(189, 176, 176);
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+#trailer {
+    margin: 5vh auto 5vh auto;
+    text-align: center;
+}
+
+#trailer iframe {
+    width: 55vw;
+    min-width: 150px;
+    max-width: 900px;
+    height: 35vh;
+
+}
+
+@media screen and (max-width: 1206px) {
+    .infofilma {
+        flex-direction: column;
+    }
+
+    section {
+        margin-top: 200px;
+    }
+
+    .erdikoa {
+        margin-top: 50px;
+    }
+
+}
+
+@media screen and (max-width: 840px) {
+    .menu ul {
+        flex-direction: column;
+    }
+
+    #logoa {
+        margin-top: 48px;
+    }
+    
+    section {
+        margin-top: 300px;
+    }
+
+}

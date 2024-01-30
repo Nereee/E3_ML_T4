@@ -1,0 +1,130 @@
+section h3 {
+	font-size: 50px;
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 30px;
+}
+
+.erreserbak {
+    margin-bottom: 10vh;
+}
+.filmenlist img {
+    width: 300px;
+}
+
+.filmenlist ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.infodiv {
+    margin-top: 2vh;
+    padding: 10vh;
+}
+#gureinfokutxa {
+    background-image: url(https://img.freepik.com/fotos-premium/fondo-tecnologia-abstracta-onda-linea-particulas-azules_664601-862.jpg);
+}
+
+#aretokutxa {
+    background-image: url(../html/irudiak/fondoak/aretoa.png);
+}
+
+#eskaintza2x1{
+    background-image: url(../html/irudiak/fondoak/2x1.jpg);
+}
+
+#sarreramota{
+    background-image: url(../html/irudiak/fondoak/sarrerak.png);
+}
+
+#eskaintzazozketa {
+    background-image: url(../html/irudiak/fondoak/sorteo.jpg);
+}
+
+#gureinfokutxa, #aretokutxa, #eskaintza2x1, #sarreramota, #eskaintzazozketa {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: auto;
+    height: 500px;
+    padding-top: 100px;
+    padding-left: 30px;
+}
+
+#eskaintza2x1, #sarreramota, #eskaintzazozketa {
+    margin-top: 5vh;
+    margin-bottom: 8vh;
+    max-width: 1200px;
+    min-width: 250px;
+}
+
+#guk {
+    background-image: url(../html/irudiak/fondoak/GuK.jpg)
+}
+
+#guk, .informazioa {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: auto;
+    padding-top: 50px;
+    padding-left: 30px;
+    padding-bottom: 20px;
+}
+
+.informazioa {
+    width: 400px;
+}
+
+.informazioa h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.informazioa p, .informazioa a {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.informazioa a:hover {
+    color: gray;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 1206px) {
+    section {
+        margin: 230px 0 0 0;
+    }
+
+    .norgarainfo {
+        margin-top: 2vh;
+        padding: 5vh;
+    }
+
+    .gureinfokutxa, .aretokutxa {
+        height: 400px;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .menu ul {
+        flex-direction: column;
+    }
+
+	#logoa {
+		margin-top: 48px;
+	}
+
+    section {
+        margin: 300px 0 0 0;
+    }
+
+    .infodiv {
+        margin-top: 2vh;
+        padding: 5vh;
+    }
+
+}
