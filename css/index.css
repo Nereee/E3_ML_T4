@@ -1,7 +1,7 @@
 section h3 {
 	font-size: 50px;
     text-align: center;
-    text-decoration: underline;
+    color: white;
     margin-bottom: 30px;
 }
 
@@ -12,8 +12,14 @@ section h3 {
     width: 300px;
 }
 
+.filmenlist {
+    padding-left: 90px;
+    padding-right: 90px;
+}
+
 .filmenlist ul {
     list-style: none;
+    padding: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -22,10 +28,11 @@ section h3 {
 
 .infodiv {
     margin-top: 2vh;
-    padding: 10vh;
+    padding: 0 10vh 5vh 10vh;
 }
+
 #gureinfokutxa {
-    background-image: url(https://img.freepik.com/fotos-premium/fondo-tecnologia-abstracta-onda-linea-particulas-azules_664601-862.jpg);
+    background-image: url(../html/irudiak/fondoak/pumba.png);
 }
 
 #aretokutxa {
@@ -45,6 +52,8 @@ section h3 {
 }
 
 #gureinfokutxa, #aretokutxa, #eskaintza2x1, #sarreramota, #eskaintzazozketa {
+    color: white;
+    text-align: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -87,44 +96,19 @@ section h3 {
 .informazioa p, .informazioa a {
     font-size: 20px;
     margin-bottom: 20px;
+    color: white;
+}
+
+.informazioa a {
+    color: lightgreen;
 }
 
 .informazioa a:hover {
-    color: gray;
-    font-weight: bold;
+    text-decoration: none;
 }
 
-@media screen and (max-width: 1206px) {
-    section {
-        margin: 230px 0 0 0;
-    }
-
-    .norgarainfo {
-        margin-top: 2vh;
-        padding: 5vh;
-    }
-
-    .gureinfokutxa, .aretokutxa {
-        height: 400px;
-    }
+.copy {
+    text-decoration: underline;
+    color: white;
 }
 
-@media screen and (max-width: 840px) {
-    .menu ul {
-        flex-direction: column;
-    }
-
-	#logoa {
-		margin-top: 48px;
-	}
-
-    section {
-        margin: 300px 0 0 0;
-    }
-
-    .infodiv {
-        margin-top: 2vh;
-        padding: 5vh;
-    }
-
-}
