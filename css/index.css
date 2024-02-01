@@ -1,115 +1,128 @@
-
 section h3 {
-	font-size: 50px;
-    text-align: center;
-    color: white;
-    margin-bottom: 30px;
+  font-size: 50px;
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
 }
 
 .erreserbak {
-    margin-bottom: 10vh;
+  margin-bottom: 10vh;
 }
 .filmenlist img {
-    width: 300px;
+  width: 300px;
 }
 
 .filmenlist {
-    padding-left: 90px;
-    padding-right: 90px;
+  padding-left: 90px;
+  padding-right: 90px;
 }
 
 .filmenlist ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 .infodiv {
-    margin-top: 2vh;
-    padding: 0 10vh 5vh 10vh;
+  margin-top: 2vh;
+  padding: 0 10vh 5vh 10vh;
 }
 
 #gureinfokutxa {
-    background-image: url(../html/irudiak/fondoak/pumba.png);
+  background-image: url(../html/irudiak/fondoak/pumba.png);
 }
 
 #aretokutxa {
-    background-image: url(../html/irudiak/fondoak/aretoa.png);
+  background-image: url(../html/irudiak/fondoak/aretoa.png);
 }
 
-#eskaintza2x1{
-    background-image: url(../html/irudiak/fondoak/2x1.jpg);
+#eskaintza2x1 {
+  background-image: url(../html/irudiak/fondoak/2x1.jpg);
 }
 
-#sarreramota{
-    background-image: url(../html/irudiak/fondoak/sarrerak.png);
+#sarreramota {
+  background-image: url(../html/irudiak/fondoak/sarrerak.png);
 }
 
 #eskaintzazozketa {
-    background-image: url(../html/irudiak/fondoak/sorteo.jpg);
+  background-image: url(../html/irudiak/fondoak/sorteo.jpg);
 }
 
-#gureinfokutxa, #aretokutxa, #eskaintza2x1, #sarreramota, #eskaintzazozketa {
-    color: white;
-    text-align: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    width: auto;
-    height: 500px;
-    padding-top: 100px;
-    padding-left: 30px;
+#gureinfokutxa,
+#aretokutxa,
+#eskaintza2x1,
+#sarreramota,
+#eskaintzazozketa {
+  color: white;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: auto;
+  height: 500px;
+  padding-top: 100px;
+  padding-left: 30px;
 }
 
-#eskaintza2x1, #sarreramota, #eskaintzazozketa {
-    margin-top: 5vh;
-    margin-bottom: 8vh;
-    max-width: 1200px;
-    min-width: 250px;
+#eskaintzaGuztia {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#eskaintza2x1,
+#sarreramota,
+#eskaintzazozketa {
+  margin-top: 5vh;
+  margin-bottom: 8vh;
+  max-width: 1200px;
+  min-width: 250px;
 }
 
 #guk {
-    background-image: url(../html/irudiak/fondoak/GuK.jpg)
+  background-image: url(../html/irudiak/fondoak/GuK.jpg);
 }
 
-#guk, .informazioa {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    width: auto;
-    padding-top: 50px;
-    padding-left: 30px;
-    padding-bottom: 20px;
+#guk,
+.informazioa {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: auto;
+  padding-top: 50px;
+  padding-left: 30px;
+  padding-bottom: 20px;
 }
 
 .informazioa {
-    width: 400px;
+  width: 400px;
 }
 
 .informazioa h2 {
-    font-size: 30px;
-    margin-bottom: 20px;
+  font-size: 30px;
+  margin-bottom: 20px;
 }
 
-.informazioa p, .informazioa a {
-    font-size: 20px;
-    margin-bottom: 20px;
-    color: white;
+.informazioa p,
+.informazioa a {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: white;
 }
 
 .informazioa a {
-    color: lightgreen;
+  color: lightgreen;
 }
 
 .informazioa a:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .copy {
-    text-decoration: underline;
-    color: white;
+  text-decoration: underline;
+  color: white;
 }
-
