@@ -126,3 +126,46 @@ section h3 {
   text-decoration: underline;
   color: white;
 }
+
+#zentratu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#sarrera_kutxa {
+  background-color: white;
+  padding: 10px;
+  width: 60%;
+  height: 100%;
+}
+
+.mota {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.mota label {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.mota input[type="number"] {
+  height: 40px;
+  background-color: transparent;
+  text-align: end;
+  border: 0;
+  width: 50px;
+  font-size: 20px;
+}
+
+.mota input[type="button"] {
+  padding: 10px;
+}
+
+.kantitate_kutxa {
+  display: flex;
+  flex-direction: row;
+}
