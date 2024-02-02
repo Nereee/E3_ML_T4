@@ -1,3 +1,8 @@
+section {
+  font-family: 'Advent Pro';
+
+}
+
 section h3 {
   font-size: 50px;
   text-align: center;
@@ -136,6 +141,8 @@ section h3 {
 
 #sarrera_kutxa {
   background-color: white;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  border-radius: 2%;
   padding: 10px;
   width: 60%;
   height: 100%;
@@ -162,6 +169,19 @@ section h3 {
   border: 0;
   width: 50px;
   font-size: 20px;
+}
+
+.mota input[type="button"] {
+  padding: 30px;
+  border-radius: 10px;
+  font-size: 20px;
+  border: 1px solid black;
+  background-color: lightgrey;
+}
+
+.mota input[type="button"]:hover {
+  background-color: #273036;
+  color: white;
 }
 
 #espazioa {
@@ -194,6 +214,10 @@ section h3 {
   text-align: end;
 }
 
-#botoiak {
+#botoiak input[type="button"] {
+  border-radius: 5px;
   float: right;
+  border: 1px solid black;
+  font-weight: bold;
 }
+

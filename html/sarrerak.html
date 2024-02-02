@@ -43,8 +43,10 @@
                             <label for="normal_mota">Tartalo (Ohiko sarrera) (8.90€)</label>
                             <div class="kantitate_kutxa">
                                 <input type="number" name="normal_mota" id="normal_mota" value="0" disabled>
-                                <input type="button" value="-" onclick="kendu(document.getElementById('normal_mota'))">
-								<input type="button" value="+" onclick="gehitu(document.getElementById('normal_mota'))">
+                                <div>
+                                  <input type="button" value="-" class="kenduBTN" onclick="kendu(document.getElementById('normal_mota'))">
+                                  <input type="button" value="+" class="gehituBTN" onclick="gehitu(document.getElementById('normal_mota'))">
+                                </div>
                             </div>
                         </div>
                         <hr>
@@ -52,8 +54,10 @@
                             <label for="gaztea_mota">Galtzagorri (Gazteen Sarrera) (6.90€)</label>
                             <div class="kantitate_kutxa">
                                 <input type="number" name="gaztea_mota" id="gaztea_mota" value="0" disabled>
-                                <input type="button" value="-" onclick="kendu(document.getElementById('gaztea_mota'))">
-								<input type="button" value="+" onclick="gehitu(document.getElementById('gaztea_mota'))">
+                                <div>
+                                  <input type="button" value="-" class="kenduBTN" onclick="kendu(document.getElementById('gaztea_mota'))">
+                                  <input type="button" value="+" class="gehituBTN" onclick="gehitu(document.getElementById('gaztea_mota'))">
+                                </div>
                             </div>
                         </div>
                         <hr>
@@ -61,8 +65,10 @@
                             <label for="jubilatu_mota">Basajaun (+65 Sarrera) (6.90€)</label>
                             <div class="kantitate_kutxa">
                                 <input type="number" name="jubilatu_mota" id="jubilatu_mota" value="0" disabled>
-                                <input type="button" value="-" onclick="kendu(document.getElementById('jubilatu_mota'))">
-								<input type="button" value="+" onclick="gehitu(document.getElementById('jubilatu_mota'))">
+                                <div>
+                                  <input type="button" value="-" class="kenduBTN" onclick="kendu(document.getElementById('jubilatu_mota'))">
+                                  <input type="button" value="+" class="gehituBTN" onclick="gehitu(document.getElementById('jubilatu_mota'))">
+                                </div>
                             </div>
                         </div>
                         <div id="espazioa">
@@ -75,7 +81,7 @@
 							</div>
 							<div id="botoiak">
 								<input type="button" value="Ikusi subtotala guztia" onclick="prezioak()">
-								<input type="button" value="Jarraitu" onclick="prezioak(), window.location.href = 'erosketak.html' ">
+								<input type="button" value="Jarraitu" id="jarraitu_btn" disabled onclick="prezioak(), window.location.href = 'erosketak.html'">
 							</div>
 						</div>
                     </div>
@@ -88,26 +94,29 @@
 
                 function prezioak() {
                     let normala_kop = parseInt(document.getElementById("normal_mota").value);
-    				let gaztea_kop = parseInt(document.getElementById("gaztea_mota").value);
-    				let jubilatu_kop = parseInt(document.getElementById("jubilatu_mota").value);
+    				        let gaztea_kop = parseInt(document.getElementById("gaztea_mota").value);
+    				        let jubilatu_kop = parseInt(document.getElementById("jubilatu_mota").value);
 
-    				let subtotala = 0;
+                    let subtotala = 0;
 
-    				if (normala_kop > 0) {
-        				subtotala += normala_kop * norm_prezioa;
-    				}
+                    if (normala_kop > 0) {
+                        subtotala += normala_kop * norm_prezioa;
+                    }
 
-					if (gaztea_kop > 0) {
-						subtotala += gaztea_kop * esp_prezioa;
-					}
-									
-					if (jubilatu_kop > 0) {
-						subtotala += jubilatu_kop * esp_prezioa;
-					}
+                  if (gaztea_kop > 0) {
+                    subtotala += gaztea_kop * esp_prezioa;
+                  }
+                          
+                  if (jubilatu_kop > 0) {
+                    subtotala += jubilatu_kop * esp_prezioa;
+                  }
 
-    				document.getElementById("subtotala").value = subtotala.toFixed(2); 
-				}
+                    document.getElementById("subtotala").value = subtotala.toFixed(2); 
 
+                  if (subtotala > 0) {
+                    document.getElementById("jarraitu_btn").disabled = false;
+                  }
+				      }
 
                 function gehitu(sarrera) {
                     var kop = parseInt(sarrera.value);
