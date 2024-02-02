@@ -40,59 +40,91 @@
                 <form action="">
                     <div id="sarrerak">
                         <div id="normala" class="mota">
-                            <label for="normal_mota">Sarrera normala:</label>
+                            <label for="normal_mota">Tartalo (Ohiko sarrera) (8.90€)</label>
                             <div class="kantitate_kutxa">
                                 <input type="number" name="normal_mota" id="normal_mota" value="0" disabled>
-                                <input type="button" value="+" onclick="gehitu(document.getElementById('normal_mota'))">
                                 <input type="button" value="-" onclick="kendu(document.getElementById('normal_mota'))">
+								<input type="button" value="+" onclick="gehitu(document.getElementById('normal_mota'))">
                             </div>
                         </div>
                         <hr>
                         <div id="gaztea" class="mota">
-                            <label for="gaztea_mota">Gazte sarrera:</label>
+                            <label for="gaztea_mota">Galtzagorri (Gazteen Sarrera) (6.90€)</label>
                             <div class="kantitate_kutxa">
                                 <input type="number" name="gaztea_mota" id="gaztea_mota" value="0" disabled>
-                                <input type="button" value="+" onclick="gehitu(document.getElementById('gaztea_mota'))">
                                 <input type="button" value="-" onclick="kendu(document.getElementById('gaztea_mota'))">
+								<input type="button" value="+" onclick="gehitu(document.getElementById('gaztea_mota'))">
                             </div>
                         </div>
                         <hr>
                         <div id="jubilatua" class="mota">
-                            <label for="jubilatu_mota">Jubilatu sarrera:</label>
+                            <label for="jubilatu_mota">Basajaun (+65 Sarrera) (6.90€)</label>
                             <div class="kantitate_kutxa">
                                 <input type="number" name="jubilatu_mota" id="jubilatu_mota" value="0" disabled>
-                                <input type="button" value="+" onclick="gehitu(document.getElementById('jubilatu_mota'))">
                                 <input type="button" value="-" onclick="kendu(document.getElementById('jubilatu_mota'))">
+								<input type="button" value="+" onclick="gehitu(document.getElementById('jubilatu_mota'))">
                             </div>
                         </div>
                         <div id="espazioa">
-                            
+                            <h1>a</h1><h1>a</h1><h1>a</h1>
                         </div>
-                        <div id="totala_kutxa">
-                            <label for="subtotala">Subtotala</label>
-                            <input type="number" name="subtotala" id="subtotala">
-                        </div>
+						<div id="totala">
+							<div id="totala_kutxa">
+								<label for="subtotala" id="subtotala_label"><b>Subtotala:</b></label>
+								<input type="number" name="subtotala" id="subtotala" value="0.00" disabled>
+							</div>
+							<div id="botoiak">
+								<input type="button" value="Ikusi subtotala guztia" onclick="prezioak()">
+								<input type="button" value="Jarraitu" onclick="prezioak(), window.location.href = 'erosketak.html' ">
+							</div>
+						</div>
                     </div>
                 </form>
-            
-                <script>
-                    function gehitu(sarrera) {
-                        var kop = parseInt(sarrera.value);
-                        kop++;
+            <script>
+
+                let esp_prezioa = 6.90;
+                let norm_prezioa = 8.90;
+                let subtotala = 0;
+
+                function prezioak() {
+                    let normala_kop = parseInt(document.getElementById("normal_mota").value);
+    				let gaztea_kop = parseInt(document.getElementById("gaztea_mota").value);
+    				let jubilatu_kop = parseInt(document.getElementById("jubilatu_mota").value);
+
+    				let subtotala = 0;
+
+    				if (normala_kop > 0) {
+        				subtotala += normala_kop * norm_prezioa;
+    				}
+
+					if (gaztea_kop > 0) {
+						subtotala += gaztea_kop * esp_prezioa;
+					}
+									
+					if (jubilatu_kop > 0) {
+						subtotala += jubilatu_kop * esp_prezioa;
+					}
+
+    				document.getElementById("subtotala").value = subtotala.toFixed(2); 
+				}
+
+
+                function gehitu(sarrera) {
+                    var kop = parseInt(sarrera.value);
+                    kop++;
+                    sarrera.value = kop;
+                }
+    
+                function kendu(sarrera) {
+                    var kop = parseInt(sarrera.value);
+    
+                    if (kop != 0) {
+                        kop--;
                         sarrera.value = kop;
                     }
-    
-                    function kendu(sarrera) {
-                        var kop = parseInt(sarrera.value);
-    
-                        if (kop != 0) {
-                            kop--;
-                            sarrera.value = kop;
-                        }
-                    }
-                </script>
+                }
+            </script>
         </div>
-
     </main>
     <footer>
       <div id="info">
