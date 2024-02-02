@@ -1,10 +1,6 @@
-
-
 <?php
 
 if(isset($_GET['izena'])&&($_GET['pasahitza'])){
-	
-	
 	
 $servername = "localhost";
 $username = "root";
@@ -20,7 +16,6 @@ if ($mysqli->connect_error) {
 }
 
 //Kontsulta
-
 
 $izena = $_GET["izena"];
 $pwd = $_GET["pasahitza"]; 
@@ -42,18 +37,13 @@ $mysqli->close();
 }
 ?>
 
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../../css/login.css" />
-    <link rel="shortcut icon" href="logoa/logoa.png" />
+    <link rel="stylesheet" href="../css/login.css" />
+    <link rel="shortcut icon" href="../html/logoa/logoa.png" />
     <title>PHIM Zinemak</title>
   </head>
   <body>
@@ -84,7 +74,7 @@ $mysqli->close();
           </div>
           <input type="password" id="pasahitza" name="pasahitza" />
         </form>
-        <button id="jarraitu">Jarraitu</button>
+        <input id="jarraitu" type="button" value="Jarraitu" onclick="window.location.href = 'sarrerak.php'">
       </div>
     </main>
   </body>
