@@ -47,7 +47,7 @@
                             <label for="normal_mota">Tartalo (Ohiko sarrera) (8.90€)</label>
                             <div class="kantitate_kutxa">
                                 <input type="number" name="normal_mota" id="normal_mota" value="0" disabled>
-                                <div>
+                                <div class="kant_botoiak">
                                   <input type="button" value="-" class="kenduBTN" onclick="kendu(document.getElementById('normal_mota'))">
                                   <input type="button" value="+" class="gehituBTN" onclick="gehitu(document.getElementById('normal_mota'))">
                                 </div>
@@ -58,7 +58,7 @@
                             <label for="gaztea_mota">Galtzagorri (Gazteen Sarrera) (6.90€)</label>
                             <div class="kantitate_kutxa">
                                 <input type="number" name="gaztea_mota" id="gaztea_mota" value="0" disabled>
-                                <div>
+                                <div class="kant_botoiak">
                                   <input type="button" value="-" class="kenduBTN" onclick="kendu(document.getElementById('gaztea_mota'))">
                                   <input type="button" value="+" class="gehituBTN" onclick="gehitu(document.getElementById('gaztea_mota'))">
                                 </div>
@@ -69,7 +69,7 @@
                             <label for="jubilatu_mota">Basajaun (+65 Sarrera) (6.90€)</label>
                             <div class="kantitate_kutxa">
                                 <input type="number" name="jubilatu_mota" id="jubilatu_mota" value="0" disabled>
-                                <div>
+                                <div class="kant_botoiak">
                                   <input type="button" value="-" class="kenduBTN" onclick="kendu(document.getElementById('jubilatu_mota'))">
                                   <input type="button" value="+" class="gehituBTN" onclick="gehitu(document.getElementById('jubilatu_mota'))">
                                 </div>
@@ -91,13 +91,15 @@
                     </div>
                 </form>
             <script>
+
                 let esp_prezioa = 6.90;
                 let norm_prezioa = 8.90;
                 let subtotala = 0;
+
                 function prezioak() {
                     let normala_kop = parseInt(document.getElementById("normal_mota").value);
-    				let gaztea_kop = parseInt(document.getElementById("gaztea_mota").value);
-    				let jubilatu_kop = parseInt(document.getElementById("jubilatu_mota").value);
+    				        let gaztea_kop = parseInt(document.getElementById("gaztea_mota").value);
+    				        let jubilatu_kop = parseInt(document.getElementById("jubilatu_mota").value);
 
                     let subtotala = 0;
 

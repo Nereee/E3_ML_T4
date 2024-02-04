@@ -29,10 +29,6 @@
         width: fit-content;
         padding-left: 0;
     }
-
-    #aretokutxa, #gureinfokutxa {
-        padding-left: 0;
-    }
   
   }
 
@@ -47,6 +43,14 @@
 
     .kantitate_kutxa {
       justify-content: space-between;
+    }
+
+    .argazki_kutxa {
+      padding: 100px 0;
+    }
+
+    #sarreramota {
+      text-align: center;
     }
   }
   
