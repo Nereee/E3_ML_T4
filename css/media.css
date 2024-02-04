@@ -82,4 +82,16 @@
     #totala_kutxa  {
       flex-direction: column;
     }
+
+    #sarrera_kutxa {
+      width: 100%;
+    }
+
+    #sarrera_kutxa h2 {
+      text-align: center;
+    }
+
+    #sarrerak {
+      padding: 10px;
+    }
   }

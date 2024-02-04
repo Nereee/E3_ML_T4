@@ -127,11 +127,6 @@ section h3 {
   text-decoration: none;
 }
 
-.copy {
-  text-decoration: underline;
-  color: white;
-}
-
 #zentratu {
   display: flex;
   flex-direction: column;
@@ -142,7 +137,7 @@ section h3 {
 #sarrera_kutxa {
   background-color: white;
   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-  border-radius: 2%;
+  border-radius: 10px;
   padding: 10px;
   width: 60%;
   height: 100%;
@@ -171,17 +166,24 @@ section h3 {
   font-size: 20px;
 }
 
+.kant_botoiak {
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+}
+
 .mota input[type="button"] {
-  padding: 30px;
-  border-radius: 10px;
-  font-size: 20px;
-  border: 1px solid black;
-  background-color: lightgrey;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .mota input[type="button"]:hover {
-  background-color: #273036;
-  color: white;
+  background-color: #b2b2b2;
 }
 
 #espazioa {
@@ -192,13 +194,13 @@ section h3 {
   visibility: hidden;
 }
 
-.mota input[type="button"] {
-  padding: 10px;
-}
-
 .kantitate_kutxa {
   display: flex;
   flex-direction: row;
+}
+
+.kantitate_kutxa button:hover {
+  background-color: #e0e0e0;
 }
 
 #totala_kutxa {
@@ -215,9 +217,22 @@ section h3 {
 }
 
 #botoiak input[type="button"] {
+  padding: 10px 20px;
   border-radius: 5px;
-  float: right;
-  border: 1px solid black;
-  font-weight: bold;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#botoiak input[type="button"]:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+#botoiak input[type="button"]:not(:disabled):hover {
+  background-color: #0056b3;
 }
 

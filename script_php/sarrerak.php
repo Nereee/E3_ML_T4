@@ -36,7 +36,7 @@
         }
       </script>
     </nav>
-    <main>
+	<main>
         <div id="zentratu">
             <div id="sarrera_kutxa">
                 <h2>Hautatu sarrera mota:</h2>
@@ -91,15 +91,13 @@
                     </div>
                 </form>
             <script>
-
                 let esp_prezioa = 6.90;
                 let norm_prezioa = 8.90;
                 let subtotala = 0;
-
                 function prezioak() {
                     let normala_kop = parseInt(document.getElementById("normal_mota").value);
-    				        let gaztea_kop = parseInt(document.getElementById("gaztea_mota").value);
-    				        let jubilatu_kop = parseInt(document.getElementById("jubilatu_mota").value);
+    				let gaztea_kop = parseInt(document.getElementById("gaztea_mota").value);
+    				let jubilatu_kop = parseInt(document.getElementById("jubilatu_mota").value);
 
                     let subtotala = 0;
 
