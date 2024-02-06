@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$info_filma = 'Alien 8';
+$info_filma = 'MILLION DOLLAR BABY';
 
 // SESSION aldagaian batean informazioa gorde egiten du.
 $_SESSION['info_filma'] = $info_filma;
@@ -16,7 +16,7 @@ $_SESSION['info_filma'] = $info_filma;
     <link rel="stylesheet" href="../../css/media.css">
     <link rel="stylesheet" href="../../css/plantilla_filma.css">
     <link rel="shortcut icon" href="../logoa/logoa_karratu.png">
-    <title>ALIEN 8</title>
+    <title>PHIM Zinemak</title>
   </head>
   <body>
     <nav>
@@ -45,38 +45,38 @@ $_SESSION['info_filma'] = $info_filma;
     <main>
         <section>
             <div class="infofilma">
-                <img src="../irudiak/filmaPortadak/Alien8.jpg" alt="Alien8">
+                <img src="../irudiak/filmaPortadak/million_dollar.jpg" alt="million_dollar">
                 <div class="erdikoa">
-                    <h1 id="tituloa">ALIEN 8</h1>
+                    <h1 id="tituloa">MILLION DOLLAR BABY</h1>
                     <h3>Egilea:</h3>
-                        <p>Dan O'bannon eta Ronald Shusett </p>
+                        <p>Clint Eastwood</p>
                     <h3>Aktore Nagusiak:</h3>
-                        <p>Sigourney Weaver, Tom Skerritt, Veronica Cartwright, <br>
-                            John Hurt, Ian Holm eta Harry Dean Stanton
-                        </p>
+                        <p> Clint Eastwood, Hilary Swank, Morgan Freeman, Jay Baruchel </p>
                     <h3>Laburpena:</h3>
-                        <p> Nostromo espazio-atoiontziko tripulazioak laguntza-seinale bat hartu du,
-                            eta, jakin gabe, estralurtarren bizimodu hilgarri bat igo du ontzira.
+                        <p> 
+                            Frankie Dunn Maggie Fitzgerald entrenatzen amaitzen duen entrenatzailea da, <br>
+                            nahiz eta izaera zakarra eta neskak ez entrenatzeko araua izan.<br>
+                            Maggie boxeolaria izan nahi duen neska da, eta edozer egiteko prest dago hori lortzeko.
                         </p>
                 </div>
                 <div class="ezkuina">
                     <h3>Iraupena:</h3> 
-                    <p> Ordu bat eta 57 minutu </p>
+                    <p> 2 ordu eta 12 minutu</p>
                     <h3>Estreinaldia:</h3>
-                    <p> 1979ko Irailaren 25a </p>
+                    <p>2005ko otsailaren 4a </p>
                     <h3>Generoa:</h3>
-                    <p>Zientzia-fikzioa</p>
+                    <p>Drama</p>
                 </div>
             </div>
             <div id="trailer">
-                <iframe width="650" height="406" src="https://www.youtube.com/embed/uhOpEUmsvMA?si=upqVLe0CMrVvMx-z" 
-                title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; 
-                encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe  width="650" height="405" src="https://www.youtube.com/embed/gGjdfvD91zQ?si=IEgKA-J2o5O992JC" title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+            </iframe>
             </div>
-  
+
             <input type= "button" id = "erosiBotoia" value = "Erosi Sarrerak" onclick = "  window.location.href = ' ../../script_php/login.php'  ">
-            
-          </section>
+
+        </section>
     </main>
     <footer>
       <div id="info">

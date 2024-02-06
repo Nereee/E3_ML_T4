@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$info_filma = 'Alien 8';
+$info_filma = 'Hereditary';
 
 // SESSION aldagaian batean informazioa gorde egiten du.
 $_SESSION['info_filma'] = $info_filma;
@@ -16,7 +16,7 @@ $_SESSION['info_filma'] = $info_filma;
     <link rel="stylesheet" href="../../css/media.css">
     <link rel="stylesheet" href="../../css/plantilla_filma.css">
     <link rel="shortcut icon" href="../logoa/logoa_karratu.png">
-    <title>ALIEN 8</title>
+    <title>PHIM Zinemak</title>
   </head>
   <body>
     <nav>
@@ -45,38 +45,39 @@ $_SESSION['info_filma'] = $info_filma;
     <main>
         <section>
             <div class="infofilma">
-                <img src="../irudiak/filmaPortadak/Alien8.jpg" alt="Alien8">
+                <img src="../irudiak/filmaPortadak/hereditary.jpg" alt="HEREDITARY">
                 <div class="erdikoa">
-                    <h1 id="tituloa">ALIEN 8</h1>
+                    <h1 id="tituloa">Hereditary</h1>
                     <h3>Egilea:</h3>
-                        <p>Dan O'bannon eta Ronald Shusett </p>
+                    <p>Ari Aster</p>
                     <h3>Aktore Nagusiak:</h3>
-                        <p>Sigourney Weaver, Tom Skerritt, Veronica Cartwright, <br>
-                            John Hurt, Ian Holm eta Harry Dean Stanton
-                        </p>
+                    <p>Toni Collette, Alex Wolff, Milly Shapiro</p>
                     <h3>Laburpena:</h3>
-                        <p> Nostromo espazio-atoiontziko tripulazioak laguntza-seinale bat hartu du,
-                            eta, jakin gabe, estralurtarren bizimodu hilgarri bat igo du ontzira.
-                        </p>
+                    <p>Familia Grahamek bere semea desagertzeko konponbidea bilatzen dute, baina horrek bere baitan
+                        arazo eta misterio larriak ekarriko ditu. Bere emaztea, Annie, lanbide artistiko bat egiten du,
+                        baina familia osoa harrapatu egiten da sekretuak, haserretuak eta harrigarriak diren
+                        gertakariekin.
+                    </p>
                 </div>
                 <div class="ezkuina">
-                    <h3>Iraupena:</h3> 
-                    <p> Ordu bat eta 57 minutu </p>
+                    <h3>Iraupena:</h3>
+                    <p>2 ordu eta 7 minutu</p>
                     <h3>Estreinaldia:</h3>
-                    <p> 1979ko Irailaren 25a </p>
+                    <p>2018ko Eusko Jaurlaritzako Urtarrilaren 21a</p>
                     <h3>Generoa:</h3>
-                    <p>Zientzia-fikzioa</p>
+                    <p>Terror, Misterioa, Drama</p>
                 </div>
             </div>
             <div id="trailer">
-                <iframe width="650" height="406" src="https://www.youtube.com/embed/uhOpEUmsvMA?si=upqVLe0CMrVvMx-z" 
-                title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; 
-                encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/7jMdzpZgqb4?si=UjW41iski_gWAsND"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
             </div>
-  
-            <input type= "button" id = "erosiBotoia" value = "Erosi Sarrerak" onclick = "  window.location.href = ' ../../script_php/login.php'  ">
             
-          </section>
+            <input type= "button" id = "erosiBotoia" value = "Erosi Sarrerak" onclick = "  window.location.href = ' ../../script_php/login.php'  ">
+
+        </section>
     </main>
     <footer>
       <div id="info">

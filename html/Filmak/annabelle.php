@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$info_filma = 'Alien 8';
+$info_filma = 'Annabelle';
 
 // SESSION aldagaian batean informazioa gorde egiten du.
 $_SESSION['info_filma'] = $info_filma;
@@ -16,7 +16,7 @@ $_SESSION['info_filma'] = $info_filma;
     <link rel="stylesheet" href="../../css/media.css">
     <link rel="stylesheet" href="../../css/plantilla_filma.css">
     <link rel="shortcut icon" href="../logoa/logoa_karratu.png">
-    <title>ALIEN 8</title>
+    <title>PHIM Zinemak</title>
   </head>
   <body>
     <nav>
@@ -45,38 +45,39 @@ $_SESSION['info_filma'] = $info_filma;
     <main>
         <section>
             <div class="infofilma">
-                <img src="../irudiak/filmaPortadak/Alien8.jpg" alt="Alien8">
+                <img src="../irudiak/filmaPortadak/annabelle.jpg" alt="annabelle">
                 <div class="erdikoa">
-                    <h1 id="tituloa">ALIEN 8</h1>
+                    <h1 id="tituloa">ANNABELLE</h1>
                     <h3>Egilea:</h3>
-                        <p>Dan O'bannon eta Ronald Shusett </p>
+                    <p>Gary Dauberman</p>
                     <h3>Aktore Nagusiak:</h3>
-                        <p>Sigourney Weaver, Tom Skerritt, Veronica Cartwright, <br>
-                            John Hurt, Ian Holm eta Harry Dean Stanton
-                        </p>
+                    <p>Mckenna Grace, Madison Iseman, Katie Sarife</p>
                     <h3>Laburpena:</h3>
-                        <p> Nostromo espazio-atoiontziko tripulazioak laguntza-seinale bat hartu du,
-                            eta, jakin gabe, estralurtarren bizimodu hilgarri bat igo du ontzira.
-                        </p>
+                    <p>Ed eta Lorraine Warren matematika bidezko enigma bat aztertzeko prest dauden paranormalen adituak
+                        dira. Hainbat kasutan parte hartu dute, bai misterio iraultzaileak eta bai arriskutsuagoak.
+                        Historia honek, familia bat aurpegiratu du, etxeko esentzia nahiagoa eta etxe hori hartu nahiko
+                        lukeen esentzia okultoarekin loturik.
+                    </p>
                 </div>
                 <div class="ezkuina">
-                    <h3>Iraupena:</h3> 
-                    <p> Ordu bat eta 57 minutu </p>
+                    <h3>Iraupena:</h3>
+                    <p>1 ordu eta 46 minutu</p>
                     <h3>Estreinaldia:</h3>
-                    <p> 1979ko Irailaren 25a </p>
+                    <p>2019ko Uztailaren 3a</p>
                     <h3>Generoa:</h3>
-                    <p>Zientzia-fikzioa</p>
+                    <p>Terror, Misterioa, Thriller</p>
                 </div>
             </div>
             <div id="trailer">
-                <iframe width="650" height="406" src="https://www.youtube.com/embed/uhOpEUmsvMA?si=upqVLe0CMrVvMx-z" 
-                title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; 
-                encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/8kmLHwKH31M?si=qTkJz7UZ33Y6xEYZ"
+                    title="YouTube video player" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
             </div>
-  
+
             <input type= "button" id = "erosiBotoia" value = "Erosi Sarrerak" onclick = "  window.location.href = ' ../../script_php/login.php'  ">
-            
-          </section>
+
+        </section>
     </main>
     <footer>
       <div id="info">

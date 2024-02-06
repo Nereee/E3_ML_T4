@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$info_filma = 'Alien 8';
+$info_filma = 'SHREK';
 
 // SESSION aldagaian batean informazioa gorde egiten du.
 $_SESSION['info_filma'] = $info_filma;
@@ -16,7 +16,7 @@ $_SESSION['info_filma'] = $info_filma;
     <link rel="stylesheet" href="../../css/media.css">
     <link rel="stylesheet" href="../../css/plantilla_filma.css">
     <link rel="shortcut icon" href="../logoa/logoa_karratu.png">
-    <title>ALIEN 8</title>
+    <title>PHIM Zinemak</title>
   </head>
   <body>
     <nav>
@@ -32,8 +32,7 @@ $_SESSION['info_filma'] = $info_filma;
         <a href="../index.html">Hasiera</a>
         <a href="../filma_guztiak.html">Filmak</a>
         <a href="../norgara.html">Informazioa</a>
-        <a href="../eskaintzak.html">Eskaintzak</a>
-        
+        <a href="../eskaintzak.html">Eskaintzak</a>  
       </div>
       <script>
         function MenuAldaketa() {
@@ -45,38 +44,38 @@ $_SESSION['info_filma'] = $info_filma;
     <main>
         <section>
             <div class="infofilma">
-                <img src="../irudiak/filmaPortadak/Alien8.jpg" alt="Alien8">
+                <img src="../irudiak/filmaPortadak/Shrek.jpg" alt="Alien8">
                 <div class="erdikoa">
-                    <h1 id="tituloa">ALIEN 8</h1>
+                    <h1 id="tituloa">SHREK</h1>
                     <h3>Egilea:</h3>
-                        <p>Dan O'bannon eta Ronald Shusett </p>
+                    <p>William Steig (liburua), Ted Elliott, Terry Rossio, Joe Stillman, Roger S.H. Schulman</p>
                     <h3>Aktore Nagusiak:</h3>
-                        <p>Sigourney Weaver, Tom Skerritt, Veronica Cartwright, <br>
-                            John Hurt, Ian Holm eta Harry Dean Stanton
-                        </p>
+                    <p>Mike Myers, Eddie Murphy, Cameron Diaz, John Lithgow</p>
                     <h3>Laburpena:</h3>
-                        <p> Nostromo espazio-atoiontziko tripulazioak laguntza-seinale bat hartu du,
-                            eta, jakin gabe, estralurtarren bizimodu hilgarri bat igo du ontzira.
-                        </p>
+                    <p>Shrek, mundu bateko ogro ogi-hondatza, bere etxea bizi denean, Lord Farquaad-ek ogroak
+                        errespetatu gabe norbera hartu duenez, bere etxea desagertzeko erabakitzen du. Baina, bere etxea
+                        desagertzeak ondorioak izango ditu, eta Shrek-ek bere bizitza aldatzeko bidean dago.
+                    </p>
                 </div>
                 <div class="ezkuina">
-                    <h3>Iraupena:</h3> 
-                    <p> Ordu bat eta 57 minutu </p>
+                    <h3>Iraupena:</h3>
+                    <p>1 ordu eta 30 minutu</p>
                     <h3>Estreinaldia:</h3>
-                    <p> 1979ko Irailaren 25a </p>
+                    <p>2001ko Apirilaren 22a</p>
                     <h3>Generoa:</h3>
-                    <p>Zientzia-fikzioa</p>
+                    <p>Animazioa, Aventura, Komedioa</p>
                 </div>
             </div>
             <div id="trailer">
-                <iframe width="650" height="406" src="https://www.youtube.com/embed/uhOpEUmsvMA?si=upqVLe0CMrVvMx-z" 
-                title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; 
-                encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/4GF8YqoTefM?si=vK0g885AYFWGCbNB"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
             </div>
-  
-            <input type= "button" id = "erosiBotoia" value = "Erosi Sarrerak" onclick = "  window.location.href = ' ../../script_php/login.php'  ">
             
-          </section>
+            <input type= "button" id = "erosiBotoia" value = "Erosi Sarrerak" onclick = "  window.location.href = ' ../../script_php/login.php'  ">
+
+        </section>
     </main>
     <footer>
       <div id="info">

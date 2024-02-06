@@ -1,12 +1,11 @@
 <?php
 session_start();
 
-$info_filma = 'Alien 8';
+$info_filma = 'El Exorcista';
 
 // SESSION aldagaian batean informazioa gorde egiten du.
 $_SESSION['info_filma'] = $info_filma;
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -16,7 +15,7 @@ $_SESSION['info_filma'] = $info_filma;
     <link rel="stylesheet" href="../../css/media.css">
     <link rel="stylesheet" href="../../css/plantilla_filma.css">
     <link rel="shortcut icon" href="../logoa/logoa_karratu.png">
-    <title>ALIEN 8</title>
+    <title>PHIM Zinemak</title>
   </head>
   <body>
     <nav>
@@ -33,7 +32,6 @@ $_SESSION['info_filma'] = $info_filma;
         <a href="../filma_guztiak.html">Filmak</a>
         <a href="../norgara.html">Informazioa</a>
         <a href="../eskaintzak.html">Eskaintzak</a>
-        
       </div>
       <script>
         function MenuAldaketa() {
@@ -42,41 +40,39 @@ $_SESSION['info_filma'] = $info_filma;
         }
       </script>
     </nav>
-    <main>
+    <main> 
         <section>
             <div class="infofilma">
-                <img src="../irudiak/filmaPortadak/Alien8.jpg" alt="Alien8">
+                <img src="../irudiak/filmaPortadak/exorcista.jpg" alt="EXORCISTA">
                 <div class="erdikoa">
-                    <h1 id="tituloa">ALIEN 8</h1>
+                    <h1 id="tituloa">EL EXORCISTA</h1>
                     <h3>Egilea:</h3>
-                        <p>Dan O'bannon eta Ronald Shusett </p>
+                    <p>William Peter Blatty (eleberria eta zuzendaria)</p>
                     <h3>Aktore Nagusiak:</h3>
-                        <p>Sigourney Weaver, Tom Skerritt, Veronica Cartwright, <br>
-                            John Hurt, Ian Holm eta Harry Dean Stanton
-                        </p>
+                    <p>Ellen Burstyn, Max von Sydow, Linda Blair, Jason Miller</p>
                     <h3>Laburpena:</h3>
-                        <p> Nostromo espazio-atoiontziko tripulazioak laguntza-seinale bat hartu du,
-                            eta, jakin gabe, estralurtarren bizimodu hilgarri bat igo du ontzira.
-                        </p>
+                    <p>Regan MacNeil izeneko umee gazte bat, jainkoa bezala otoitzen den jainko-ikerketa baten ondorioz jazarri egiten da. Bere gurasoek, espantapajaros bezalako medikua gurasoek hartzeko, erabakia hartu dute "El Exorcista" batera ekartzeko, baina gauza horrek jainkoen aurkako borrokan murgilduko duen astun argi batean bilakatuko da.
+                    </p>
                 </div>
                 <div class="ezkuina">
-                    <h3>Iraupena:</h3> 
-                    <p> Ordu bat eta 57 minutu </p>
+                    <h3>Iraupena:</h3>
+                    <p>2 ordu eta 2 minutu</p>
                     <h3>Estreinaldia:</h3>
-                    <p> 1979ko Irailaren 25a </p>
+                    <p>1973ko Azaroaren 26a</p>
                     <h3>Generoa:</h3>
-                    <p>Zientzia-fikzioa</p>
+                    <p>Terror, Thriller</p>
                 </div>
             </div>
             <div id="trailer">
-                <iframe width="650" height="406" src="https://www.youtube.com/embed/uhOpEUmsvMA?si=upqVLe0CMrVvMx-z" 
-                title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; 
-                encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/BU2eYAO31Cc?si=ML5drrXgfbOGYSlK"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
             </div>
-  
-            <input type= "button" id = "erosiBotoia" value = "Erosi Sarrerak" onclick = "  window.location.href = ' ../../script_php/login.php'  ">
             
-          </section>
+            <input type= "button" id = "erosiBotoia" value = "Erosi Sarrerak" onclick = "  window.location.href = ' ../../script_php/login.php'  ">
+
+        </section>
     </main>
     <footer>
       <div id="info">

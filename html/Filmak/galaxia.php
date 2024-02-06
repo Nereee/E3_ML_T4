@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$info_filma = 'Alien 8';
+$info_filma = 'Guardianes De La Galaxia';
 
 // SESSION aldagaian batean informazioa gorde egiten du.
 $_SESSION['info_filma'] = $info_filma;
@@ -10,18 +10,18 @@ $_SESSION['info_filma'] = $info_filma;
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/media.css">
-    <link rel="stylesheet" href="../../css/plantilla_filma.css">
-    <link rel="shortcut icon" href="../logoa/logoa_karratu.png">
-    <title>ALIEN 8</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/media.css" />
+    <link rel="stylesheet" href="../../css/plantilla_filma.css"/>
+    <link rel="shortcut icon" href="../logoa/logoa_karratu.png" />
+    <title>PHIM Zinemak</title>
   </head>
   <body>
     <nav>
       <div class="logo">
-        <img src="../logoa/logoa.png" alt="Logo">
+        <img src="../logoa/logoa.png" alt="Logo" />
       </div>
       <div class="menu-toggle" id="mobile-menu" onclick="MenuAldaketa()">
         <span class="bar"></span>
@@ -45,38 +45,41 @@ $_SESSION['info_filma'] = $info_filma;
     <main>
         <section>
             <div class="infofilma">
-                <img src="../irudiak/filmaPortadak/Alien8.jpg" alt="Alien8">
+                <img src="../irudiak/filmaPortadak/guardianes_galaxia.jpg" alt="EXORCISTA">
                 <div class="erdikoa">
-                    <h1 id="tituloa">ALIEN 8</h1>
+                    <h1 id="tituloa">Guardianes De La Galaxia</h1>
                     <h3>Egilea:</h3>
-                        <p>Dan O'bannon eta Ronald Shusett </p>
+                    <p>James Gunn, Nicole Perlman (istorioa)</p>
                     <h3>Aktore Nagusiak:</h3>
-                        <p>Sigourney Weaver, Tom Skerritt, Veronica Cartwright, <br>
-                            John Hurt, Ian Holm eta Harry Dean Stanton
-                        </p>
+                    <p>Chris Pratt, Zoe Saldana, Dave Bautista, Vin Diesel (Groot ahotsa), Bradley Cooper (Rocket
+                        ahotsa)</p>
                     <h3>Laburpena:</h3>
-                        <p> Nostromo espazio-atoiontziko tripulazioak laguntza-seinale bat hartu du,
-                            eta, jakin gabe, estralurtarren bizimodu hilgarri bat igo du ontzira.
-                        </p>
+                    <p>Peter Quill, erdiko espazioan bizi den bidaia-lana, deselegantea eta indar handia izan da, baina
+                        hainbat galaxietako jabeen aurka hitz egin duenean, kalea elkarlanean zentzat hartzen du. Talde
+                        bat osatu nahi du, eta beraien artean, hainbat ingurunetako kriminalak bilduko ditu. Baina,
+                        zenbaki hauek denentzako zulo bat duten artean, Peter bere gain hartuko duen artea aurkituko
+                        dute.
+                    </p>
                 </div>
                 <div class="ezkuina">
-                    <h3>Iraupena:</h3> 
-                    <p> Ordu bat eta 57 minutu </p>
+                    <h3>Iraupena:</h3>
+                    <p>2 ordu eta 1 minutu</p>
                     <h3>Estreinaldia:</h3>
-                    <p> 1979ko Irailaren 25a </p>
+                    <p>2014ko Abuztuaren 1a</p>
                     <h3>Generoa:</h3>
-                    <p>Zientzia-fikzioa</p>
+                    <p>Zientzia-fikzioa, Aventura, Akzioa, Komedioa</p>
                 </div>
             </div>
             <div id="trailer">
-                <iframe width="650" height="406" src="https://www.youtube.com/embed/uhOpEUmsvMA?si=upqVLe0CMrVvMx-z" 
-                title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; 
-                encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/dzj4P11Yr6E?si=ItXZ8XiCs2lAjmn0"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
             </div>
-  
+
             <input type= "button" id = "erosiBotoia" value = "Erosi Sarrerak" onclick = "  window.location.href = ' ../../script_php/login.php'  ">
-            
-          </section>
+
+        </section>
     </main>
     <footer>
       <div id="info">

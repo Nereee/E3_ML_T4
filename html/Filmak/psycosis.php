@@ -1,14 +1,14 @@
 <?php
 session_start();
 
-$info_filma = 'Alien 8';
+$info_filma = 'PSYCOSIS';
 
 // SESSION aldagaian batean informazioa gorde egiten du.
 $_SESSION['info_filma'] = $info_filma;
 ?>
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="eu">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +16,7 @@ $_SESSION['info_filma'] = $info_filma;
     <link rel="stylesheet" href="../../css/media.css">
     <link rel="stylesheet" href="../../css/plantilla_filma.css">
     <link rel="shortcut icon" href="../logoa/logoa_karratu.png">
-    <title>ALIEN 8</title>
+    <title>PHIM Zinemak</title>
   </head>
   <body>
     <nav>
@@ -33,7 +33,6 @@ $_SESSION['info_filma'] = $info_filma;
         <a href="../filma_guztiak.html">Filmak</a>
         <a href="../norgara.html">Informazioa</a>
         <a href="../eskaintzak.html">Eskaintzak</a>
-        
       </div>
       <script>
         function MenuAldaketa() {
@@ -45,38 +44,42 @@ $_SESSION['info_filma'] = $info_filma;
     <main>
         <section>
             <div class="infofilma">
-                <img src="../irudiak/filmaPortadak/Alien8.jpg" alt="Alien8">
+                <img src="../irudiak/filmaPortadak/psycosis.jpg" alt="psycosis">
                 <div class="erdikoa">
-                    <h1 id="tituloa">ALIEN 8</h1>
+                    <h1 id="tituloa">PSYCOSIS</h1>
                     <h3>Egilea:</h3>
-                        <p>Dan O'bannon eta Ronald Shusett </p>
+                        <p> Alfred Hitchcock</p>
                     <h3>Aktore Nagusiak:</h3>
-                        <p>Sigourney Weaver, Tom Skerritt, Veronica Cartwright, <br>
-                            John Hurt, Ian Holm eta Harry Dean Stanton
-                        </p>
+                        <p>Anthony Perkins, Janet Leigh, John Gavin, <br>
+                        Vera Miles, Martin Balsam, John Mclntire, <br>
+                        Simon Oakland eta Vaughn Taylor. </p>
                     <h3>Laburpena:</h3>
-                        <p> Nostromo espazio-atoiontziko tripulazioak laguntza-seinale bat hartu du,
-                            eta, jakin gabe, estralurtarren bizimodu hilgarri bat igo du ontzira.
+                        <p> 
+                        Gau euritsu batean, Marion Crane (Janet Leigh, 'La niebla') izeneko neska gazte bat iritsiko da, eta gela bat eskatuko du, izen faltsu batekin, nagusiari 40.000 dolar lapurtu ondoren. <br>
+                        Batesekin afari bat egin ondoren, Marionek bere gelara joatea erabaki du dutxa bat hartu eta oheratzeko. Emakume gaztea dutxa atsegin batez gozatzen ari dela ematen duenean, itzal bat agertuko da gortinaren atzean, eta bat-batean pertsona batek labana batekin bizitza arebatuko dio. <br>
+                        Astebeteren buruan, Marionen senargaia, John (Sam Loomis) eta honen arreba, Lila Vera Miles, desagertuaren bila 
+                        hasiko dira, misterioz beteriko istorio izugarri bat hasiz.
                         </p>
                 </div>
                 <div class="ezkuina">
                     <h3>Iraupena:</h3> 
-                    <p> Ordu bat eta 57 minutu </p>
+                    <p> Ordu bat eta 49 minutu</p>
                     <h3>Estreinaldia:</h3>
-                    <p> 1979ko Irailaren 25a </p>
+                    <p>1961ko apirilaren 2a </p>
                     <h3>Generoa:</h3>
-                    <p>Zientzia-fikzioa</p>
+                    <p>Beldurra</p>
                 </div>
             </div>
-            <div id="trailer">
-                <iframe width="650" height="406" src="https://www.youtube.com/embed/uhOpEUmsvMA?si=upqVLe0CMrVvMx-z" 
-                title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; 
-                encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div id="trailer">                
+                <iframe width="650" height="406" src="https://www.youtube.com/embed/mC2gOyWuSEY?si=IBPTW4xKoXmlpdKc" 
+                title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+                gyroscope; picture-in-picture; web-share" 
+                allowfullscreen></iframe>
             </div>
-  
-            <input type= "button" id = "erosiBotoia" value = "Erosi Sarrerak" onclick = "  window.location.href = ' ../../script_php/login.php'  ">
             
-          </section>
+            <input type= "button" id = "erosiBotoia" value = "Erosi Sarrerak" onclick = "  window.location.href = ' ../../script_php/login.php'  ">
+
+        </section>
     </main>
     <footer>
       <div id="info">

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$info_filma = 'Alien 8';
+$info_filma = 'El Planeta de los Simios';
 
 // SESSION aldagaian batean informazioa gorde egiten du.
 $_SESSION['info_filma'] = $info_filma;
@@ -16,7 +16,7 @@ $_SESSION['info_filma'] = $info_filma;
     <link rel="stylesheet" href="../../css/media.css">
     <link rel="stylesheet" href="../../css/plantilla_filma.css">
     <link rel="shortcut icon" href="../logoa/logoa_karratu.png">
-    <title>ALIEN 8</title>
+    <title>PHIM Zinemak</title>
   </head>
   <body>
     <nav>
@@ -33,7 +33,6 @@ $_SESSION['info_filma'] = $info_filma;
         <a href="../filma_guztiak.html">Filmak</a>
         <a href="../norgara.html">Informazioa</a>
         <a href="../eskaintzak.html">Eskaintzak</a>
-        
       </div>
       <script>
         function MenuAldaketa() {
@@ -45,38 +44,42 @@ $_SESSION['info_filma'] = $info_filma;
     <main>
         <section>
             <div class="infofilma">
-                <img src="../irudiak/filmaPortadak/Alien8.jpg" alt="Alien8">
+                <img src="../irudiak/filmaPortadak/simios.jpg" alt="simios">
                 <div class="erdikoa">
-                    <h1 id="tituloa">ALIEN 8</h1>
+                    <h1 id="tituloa">El Planeta de los Simios </h1>
                     <h3>Egilea:</h3>
-                        <p>Dan O'bannon eta Ronald Shusett </p>
+                        <p> Pierre Boulle </p>
                     <h3>Aktore Nagusiak:</h3>
-                        <p>Sigourney Weaver, Tom Skerritt, Veronica Cartwright, <br>
-                            John Hurt, Ian Holm eta Harry Dean Stanton
+                        <p>
+                            Linda Harrison, Roddy McDowall, Kim Hunter,
+                            Maurice Evans, James Whitmore, Lou Wagner
                         </p>
                     <h3>Laburpena:</h3>
-                        <p> Nostromo espazio-atoiontziko tripulazioak laguntza-seinale bat hartu du,
-                            eta, jakin gabe, estralurtarren bizimodu hilgarri bat igo du ontzira.
+                        <p> 
+                            George Taylor espazio-ontzi bateko tripulazioko kide da, iraupen luzeko misio batean. 
+                            Planeta ezezagun eta itxuraz bizitza adimentsurik gabeko batean erori da. Hala ere, laster konturatuko da 
+                            oso garatuta dauden tximino-arraza batek gobernatzen duela, komunikatzeko gai ez diren gizaki batzuk ç
+                            esklabo bihurtzen dituena.
                         </p>
                 </div>
                 <div class="ezkuina">
                     <h3>Iraupena:</h3> 
-                    <p> Ordu bat eta 57 minutu </p>
+                    <p> ordu bat eta 55 minutu </p>
                     <h3>Estreinaldia:</h3>
-                    <p> 1979ko Irailaren 25a </p>
+                    <p> 1968ko ekainaren 3a </p>
                     <h3>Generoa:</h3>
-                    <p>Zientzia-fikzioa</p>
+                    <p> Zientzia-Fikzioa</p>
                 </div>
             </div>
             <div id="trailer">
-                <iframe width="650" height="406" src="https://www.youtube.com/embed/uhOpEUmsvMA?si=upqVLe0CMrVvMx-z" 
+                <iframe width="650" height="406" src="https://www.youtube.com/embed/R4csizZgJzs?si=uMGPMtTNNGnSZEG8" 
                 title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; 
                 encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
-  
-            <input type= "button" id = "erosiBotoia" value = "Erosi Sarrerak" onclick = "  window.location.href = ' ../../script_php/login.php'  ">
             
-          </section>
+            <input type= "button" id = "erosiBotoia" value = "Erosi Sarrerak" onclick = "  window.location.href = ' ../../script_php/login.php'  ">
+
+        </section>
     </main>
     <footer>
       <div id="info">

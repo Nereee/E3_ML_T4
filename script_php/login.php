@@ -1,8 +1,6 @@
 <?php
 
-include '../html/Filmak/alien8.php';
-
-echo $GLOBALS['ALIEN_8'] ;
+session_start();
 
 if(isset($_GET['izena'])&&($_GET['pasahitza'])){
 	
@@ -78,7 +76,7 @@ $mysqli->close();
           </div>
           <input type="password" id="pasahitza" name="pasahitza">
         </form>
-        <button id="jarraitu">Jarraitu</button>
+        <input type="button" id="jarraitu" value="Jarraitu" onclick="window.location.href = 'erosketak.php'" >
       </div>
     </main>
   </body>

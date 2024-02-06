@@ -1,14 +1,14 @@
 <?php
 session_start();
 
-$info_filma = 'Alien 8';
+$info_filma = 'Cisne Negro';
 
 // SESSION aldagaian batean informazioa gorde egiten du.
 $_SESSION['info_filma'] = $info_filma;
 ?>
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="eu">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +16,7 @@ $_SESSION['info_filma'] = $info_filma;
     <link rel="stylesheet" href="../../css/media.css">
     <link rel="stylesheet" href="../../css/plantilla_filma.css">
     <link rel="shortcut icon" href="../logoa/logoa_karratu.png">
-    <title>ALIEN 8</title>
+    <title>PHIM Zinemak</title>
   </head>
   <body>
     <nav>
@@ -45,38 +45,44 @@ $_SESSION['info_filma'] = $info_filma;
     <main>
         <section>
             <div class="infofilma">
-                <img src="../irudiak/filmaPortadak/Alien8.jpg" alt="Alien8">
+                <img src="../irudiak/filmaPortadak/cisnenegro.jpg" alt="cisnenegro">
                 <div class="erdikoa">
-                    <h1 id="tituloa">ALIEN 8</h1>
+                    <h1 id="tituloa">CISNE NEGRO</h1>
                     <h3>Egilea:</h3>
-                        <p>Dan O'bannon eta Ronald Shusett </p>
+                        <p>Darren Aronofsky</p>
                     <h3>Aktore Nagusiak:</h3>
-                        <p>Sigourney Weaver, Tom Skerritt, Veronica Cartwright, <br>
-                            John Hurt, Ian Holm eta Harry Dean Stanton
+                        <p>Natalie Portman, Mila Kunis, Vicent Cassel, <br>
+                        Winona Ryder, Barbara Hershey, Sebastian Stan, <br>
+                        Janet Montgomery eta Toby Hemingway 
                         </p>
                     <h3>Laburpena:</h3>
-                        <p> Nostromo espazio-atoiontziko tripulazioak laguntza-seinale bat hartu du,
-                            eta, jakin gabe, estralurtarren bizimodu hilgarri bat igo du ontzira.
+                        <p> 
+                        Nina New Yorkeko dantzariaren istorioa kontatzen du. <br>
+                        Thomas Leroy zuzendari artistikoak Beth Macintyre dantzari nagusia ordezkatzen duenean, Ninak izar bihurtzeko aukera ikusten du. Baina Leroyk Lily misteriotsuari ere erreparatzen dio paper nagusirako. <br>
+                        Zisne Zuriaren garbitasuna eta Zisne Beltzaren sentsualtasuna aldi berean irudikatu behar dituen dantzaria. <br>
+                        Thomasek uste du Nina aise mugitzen dela lehenengoaren azalean, baina bigarrena gorpuzteko erotismoa falta zaiola uste du. <br> 
+                        Bere ama Ericaren lehiari eta presioei esker, Ninak harreman ia gaixoa izango du Lilyrekin, eta bere alde suntsitzailearekin konektatuz txarrena aterako du.
                         </p>
                 </div>
                 <div class="ezkuina">
                     <h3>Iraupena:</h3> 
-                    <p> Ordu bat eta 57 minutu </p>
+                        <p> Ordu bat eta 50 minutu</p>
                     <h3>Estreinaldia:</h3>
-                    <p> 1979ko Irailaren 25a </p>
+                        <p>2011ko otsailaren 18a </p>
                     <h3>Generoa:</h3>
-                    <p>Zientzia-fikzioa</p>
+                        <p>Beldurra</p>
                 </div>
             </div>
             <div id="trailer">
-                <iframe width="650" height="406" src="https://www.youtube.com/embed/uhOpEUmsvMA?si=upqVLe0CMrVvMx-z" 
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/uPnB_Bjh5fo?si=UWMOcQ2KnjUkJrlr"
                 title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; 
-                encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen></iframe>
             </div>
-  
+
             <input type= "button" id = "erosiBotoia" value = "Erosi Sarrerak" onclick = "  window.location.href = ' ../../script_php/login.php'  ">
-            
-          </section>
+
+        </section>
     </main>
     <footer>
       <div id="info">
