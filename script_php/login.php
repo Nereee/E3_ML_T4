@@ -1,5 +1,9 @@
 <?php
 
+include '../html/Filmak/alien8.php';
+
+echo $GLOBALS['ALIEN_8'] ;
+
 if(isset($_GET['izena'])&&($_GET['pasahitza'])){
 	
 $servername = "localhost";
@@ -42,7 +46,7 @@ $mysqli->close();
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/login.css">
+    <link rel="stylesheet" href="../css/login.css">
     <link rel="shortcut icon" href="logoa/logoa.png">
     <title>PHIM Zinemak</title>
   </head>
