@@ -5,9 +5,12 @@ if(isset($_SESSION['info_filma'])) {
   $info_filma = $_SESSION['info_filma'];
 }
 
-if(isset($_SESSION['data'])) {
-  $data = $_SESSION['data'];
-}
+if(isset($_POST['data'])) {
+    $data = $_POST['data'];
+    $_SESSION['data'] = $data;
+  } else {
+    $_SESSION['data'] = "No se recibió ninguna fecha.";
+  }
 ?>
 
 <!DOCTYPE html>
