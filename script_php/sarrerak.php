@@ -85,7 +85,7 @@
 							</div>
 							<div id="botoiak">
 								<input type="button" value="Ikusi subtotala guztia" onclick="prezioak()">
-								<input type="button" value="Jarraitu" id="jarraitu_btn" disabled onclick="prezioak(), window.location.href = 'erosketak.html'">
+								<input type="button" value="Jarraitu" id="jarraitu_btn" disabled onclick="prezioak(), window.location.href = 'erosketak.php'">
 							</div>
 						</div>
 					</div>

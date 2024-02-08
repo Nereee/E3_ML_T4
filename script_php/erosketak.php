@@ -2,24 +2,55 @@
 
 session_start();
 
-// procesar.php
+if(isset($_SESSION['info_filma'])) {
+	$info_filma = $_SESSION['info_filma'];
+  }
+  
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $db = "db_ElorrietaZinema";
+
+    // Konexioa sortu
+    $mysqli = new mysqli($servername, $username, $password, $db);
+
+    // Konexioa egiaztatu
+    if ($mysqli->connect_error) {
+      die("Connection failed: " . $mysqli->connect_error);
+    }
+
+    //Kontsulta
+    $erabiltzailea = $_POST["erabiltzailea"];
+    $pwd = $_POST["pasahitza"]; 
+
+    $sql = "SELECT izena from zinema join saioa ";
+    //kontsulta egin db
+    $result = $mysqli->query($sql);
+
+    if ($result && $result->num_rows > 0) {
+      // Iniciar sesión y redirigir al usuario a la página de inicio
+      $_SESSION['erabiltzailea'] =  $erabiltzailea;
+      header("Location: sarrerak.php");
+      exit;
+    } else {
+      // Mostrar un mensaje de error si la autenticación falla
+      echo "'Pasahitza edo erabiltzailea ez dira zuzenak'";
+    }
+
+  // Konexioa itxi
+  $mysqli->close();
+
 
 $data = "";
 
 if(isset($_POST['data'])) {
   $data = $_POST['data'];
   echo $data;
-} else {
-  echo "No se recibió ninguna fecha.";
 }
 
 $_SESSION['zinema'];
 $_SESSION['data'] = $data;
 $_SESSION['saioa'];
-
-if(isset($_SESSION['info_filma'])) {
-  $info_filma = $_SESSION['info_filma'];
-}
 
 ?>
 
@@ -37,7 +68,7 @@ if(isset($_SESSION['info_filma'])) {
     <div class="kutxa">
         <a href="../html/index.html"><img id="buelta" src="../html/irudiak/login/cross-svgrepo-com.svg" alt="buelta"></a>
         <h1>Erosketa</h1>
-        <form id="erosketaForm" action="laburpena.php" method="POST"> <!-- Cambiado 'get' a 'laburpena.php' y añadido 'method="POST"' -->
+        <form id="erosketaForm" action="laburpena.php" method="POST"> 
             <label for="filma_aukera">Filma aukeraketa:</label><br>
             <input type="text" name="filma_aukera" id="filma_aukera" disabled value="<?php echo $info_filma; ?>"><br><br>
 
@@ -50,27 +81,23 @@ if(isset($_SESSION['info_filma'])) {
             <label for="saioa_aukera">Aukeratu saioa:</label><br>
             <select name="saioa_aukera" id="saioa_aukera"></select><br><br>
 
-            <input type="submit" id="jarraitu" name="jarraitu" value="Jarraitu"> <!-- Cambiado type a "submit" -->
+            <input type="submit" id="jarraitu" name="jarraitu" value="Jarraitu" onclick="dataAukera()">
         </form>
     </div>
 </main>
 <script>
-    document.getElementById('erosketaForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevenir que el formulario se envíe normalmente
+    function dataAukera() {
+        var AukeraData = document.getElementById('data_aukera').value;
 
-        // Obtener el valor de la fecha seleccionada
-        var fechaSeleccionada = document.getElementById('data_aukera').value;
+        var izkutuaInput = document.createElement('input');
+        izkutuaInput.type = 'hidden';
+        izkutuaInput.name = 'data'; 
+        izkutuaInput.value = AukeraData;
+        
+        document.getElementById('erosketaForm').appendChild(izkutuaInput);
 
-        // Crear un campo oculto en el formulario para enviar la fecha al servidor
-        var hiddenInput = document.createElement('input');
-        hiddenInput.type = 'hidden';
-        hiddenInput.name = 'data'; // Nombre del campo que recibirá el valor en PHP
-        hiddenInput.value = fechaSeleccionada;
-        this.appendChild(hiddenInput);
-
-        // Enviar el formulario
-        this.submit();
-    });
+        document.getElementById('erosketaForm').submit();
+    }
 </script>
 </body>
 </html>
