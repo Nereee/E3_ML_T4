@@ -16,7 +16,7 @@
   <body>
     <nav>
       <div class="logo">
-        <img src="logoa/logoa.png" alt="Logo">
+        <img src="../html/logoa/logoa.png" alt="Logo">
       </div>
       <div class="menu-toggle" id="mobile-menu" onclick="MenuAldaketa()">
         <span class="bar"></span>
@@ -85,7 +85,7 @@
 							</div>
 							<div id="botoiak">
 								<input type="button" value="Ikusi subtotala guztia" onclick="prezioak()">
-								<input type="button" value="Jarraitu" id="jarraitu_btn" disabled onclick="prezioak(), window.location.href = 'erosketak.html'">
+								<input type="button" value="Jarraitu" id="jarraitu_btn" disabled onclick="prezioak(), window.location.href = 'erosketak.php'">
 							</div>
 						</div>
 					</div>
