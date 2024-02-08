@@ -16,7 +16,7 @@
   <body>
     <nav>
       <div class="logo">
-        <img src="logoa/logoa.png" alt="Logo">
+        <img src="../html/logoa/logoa.png" alt="Logo">
       </div>
       <div class="menu-toggle" id="mobile-menu" onclick="MenuAldaketa()">
         <span class="bar"></span>

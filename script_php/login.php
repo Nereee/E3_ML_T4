@@ -1,7 +1,9 @@
 <?php
 session_start();
 
-if(isset($_POST['erabiltzailea']) && isset($_POST['pasahitza'])) {
+$error_message = ""; // Variable para almacenar el mensaje de error
+
+if (isset($_POST['erabiltzailea']) && isset($_POST['pasahitza'])) {
     
     $servername = "localhost";
     $username = "root";
@@ -13,33 +15,33 @@ if(isset($_POST['erabiltzailea']) && isset($_POST['pasahitza'])) {
 
     // Konexioa egiaztatu
     if ($mysqli->connect_error) {
-      die("Connection failed: " . $mysqli->connect_error);
-      echo "<h1>NO FUNCIONA</h1>";
+        die("Connection failed: " . $mysqli->connect_error);
+        echo "<h1>NO FUNCIONA</h1>";
     }
 
-    //Kontsulta
+    // Kontsulta
     $erabiltzailea = $_POST["erabiltzailea"];
     $pwd = $_POST["pasahitza"]; 
 
     $sql = "SELECT idBezero FROM bezeroa WHERE erabiltzailea = '$erabiltzailea' AND pasahitza = '$pwd'";
-    //kontsulta egin db
+    
+    // Kontsulta egin db
     $result = $mysqli->query($sql);
 
     if ($result && $result->num_rows > 0) {
-      // Iniciar sesión y redirigir al usuario a la página de inicio
-      $_SESSION['erabiltzailea'] =  $erabiltzailea;
-      header("Location: sarrerak.php");
-      exit;
+        // Iniciar sesión y redirigir al usuario a la página de inicio
+        $_SESSION['erabiltzailea'] =  $erabiltzailea;
+        header("Location: sarrerak.php");
+        exit;
     } else {
-      // Mostrar un mensaje de error si la autenticación falla
-      echo "'Pasahitza edo erabiltzailea ez dira zuzenak'";
+        // Mostrar un mensaje de error si la autenticación falla
+        $error_message = "Pasahitza edo erabiltzailea ez dira zuzenak";
     }
 
-  // Konexioa itxi
-  $mysqli->close();
+    // Konexioa itxi
+    $mysqli->close();
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="es">
@@ -57,7 +59,7 @@ if(isset($_POST['erabiltzailea']) && isset($_POST['pasahitza'])) {
             <img id="buelta" src="../html/irudiak/login/cross-svgrepo-com.svg" alt="buelta">
         </a>
         <h1>Login</h1>
-		<form id="userform" action="login.php" method="POST">
+        <form id="userform" action="login.php" method="POST">
             <div class="userkutxa">
                 <img src="../html/irudiak/login/profile-svgrepo-com.svg" alt="erabiltzailea">
                 <label for="erabiltzailea">Erabiltzailea</label> <br>
@@ -68,7 +70,15 @@ if(isset($_POST['erabiltzailea']) && isset($_POST['pasahitza'])) {
                 <label for="pasahitza">Pasahitza</label> <br>
             </div>
             <input type="password" id="pasahitza" name="pasahitza">
-              <input type="submit" id="jarraitu" value="Jarraitu">
+
+            <?php
+              // Mostrar el mensaje de error si existe
+              if (!empty($error_message)) {
+                echo '<p style="color: yellow; text-align: center; font-weigth: bold;">' . $error_message . '</p>';
+              }
+            ?>
+            <br>
+            <input type="submit" id="jarraitu" value="Jarraitu">
         </form>
     </div>
 </main>
