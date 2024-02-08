@@ -2,7 +2,16 @@
 
 session_start();
 
+// procesar.php
+
 $data = "";
+
+if(isset($_POST['data'])) {
+  $data = $_POST['data'];
+  echo $data;
+} else {
+  echo "No se recibió ninguna fecha.";
+}
 
 $_SESSION['zinema'];
 $_SESSION['data'] = $data;
@@ -23,13 +32,12 @@ if(isset($_SESSION['info_filma'])) {
     <link rel="shortcut icon" href="../html/logoa/logoa.png">
     <title>Erosketa</title>
 </head>
-
 <body id="sarrerak_body">
 <main>
     <div class="kutxa">
         <a href="../html/index.html"><img id="buelta" src="../html/irudiak/login/cross-svgrepo-com.svg" alt="buelta"></a>
         <h1>Erosketa</h1>
-        <form action="laburpena.php" method="POST"> <!-- Cambiado 'get' a 'laburpena.php' y añadido 'method="POST"' -->
+        <form id="erosketaForm" action="laburpena.php" method="POST"> <!-- Cambiado 'get' a 'laburpena.php' y añadido 'method="POST"' -->
             <label for="filma_aukera">Filma aukeraketa:</label><br>
             <input type="text" name="filma_aukera" id="filma_aukera" disabled value="<?php echo $info_filma; ?>"><br><br>
 
@@ -46,22 +54,23 @@ if(isset($_SESSION['info_filma'])) {
         </form>
     </div>
 </main>
-</body>
 <script>
-      // Esperar a que el DOM esté completamente cargado
-    document.addEventListener('DOMContentLoaded', function() {
-        // Obtener el elemento de fecha
-        var fechaElement = document.getElementById('data_aukera');
-        
-        // Manejar el evento de cambio en la fecha
-        fechaElement.addEventListener('change', function() {
-            // Obtener la fecha seleccionada
-            var fechaSeleccionada = fechaElement.value;
-            
-            // Guardar la fecha seleccionada en la variable de sesión PHP
-            <?php echo "var fechaPHP = '" . $_SESSION['data'] . "';"; ?>
-            <?php echo $_SESSION['data'] = fechaSeleccionada; ?>
-        });
+    document.getElementById('erosketaForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevenir que el formulario se envíe normalmente
+
+        // Obtener el valor de la fecha seleccionada
+        var fechaSeleccionada = document.getElementById('data_aukera').value;
+
+        // Crear un campo oculto en el formulario para enviar la fecha al servidor
+        var hiddenInput = document.createElement('input');
+        hiddenInput.type = 'hidden';
+        hiddenInput.name = 'data'; // Nombre del campo que recibirá el valor en PHP
+        hiddenInput.value = fechaSeleccionada;
+        this.appendChild(hiddenInput);
+
+        // Enviar el formulario
+        this.submit();
     });
-    </script>
+</script>
+</body>
 </html>
