@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/media.css">
-    <link rel="shortcut icon" href="logoa/logoa_karratu.png">
+    <link rel="shortcut icon" href="../html/logoa/logoa.png">
     <title>PHIM Zinemak</title>
   </head>
   <body>
