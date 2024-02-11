@@ -23,7 +23,7 @@ if(isset($_SESSION['info_filma'])) {
     $erabiltzailea = $_POST["erabiltzailea"];
     $pwd = $_POST["pasahitza"]; 
 
-    $sql = "SELECT izena from zinema join saioa ";
+    $sql = "SELECT z.izena FROM zinema z JOIN saioa s USING (idZinema) JOIN filma f USING (idFilma) WHERE f.izena = '$info_filma' GROUP BY z.idZinema ";
     //kontsulta egin db
     $result = $mysqli->query($sql);
 

@@ -29,6 +29,12 @@
         width: fit-content;
         padding-left: 0;
     }
+
+    #guk {
+      background-image: none;
+      padding: 0;
+      text-align: center;
+    }
   
   }
 
