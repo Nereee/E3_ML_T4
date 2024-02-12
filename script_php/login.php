@@ -49,7 +49,7 @@ if (isset($_POST['erabiltzailea']) && isset($_POST['pasahitza'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/login.css">
-    <link rel="shortcut icon" href="../html/logoa/logoa.png">
+    <link rel="shortcut icon" href="../html/logoa/logoa_karratu.png">
     <title>PHIM Zinemak</title>
 </head>
 <body>

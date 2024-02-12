@@ -19,22 +19,13 @@ if(isset($_SESSION['info_filma'])) {
       die("Connection failed: " . $mysqli->connect_error);
     }
 
-    //Kontsulta
-    $erabiltzailea = $_POST["erabiltzailea"];
-    $pwd = $_POST["pasahitza"]; 
-
-    $sql = "SELECT z.izena FROM zinema z JOIN saioa s USING (idZinema) JOIN filma f USING (idFilma) WHERE f.izena = '$info_filma' GROUP BY z.idZinema ";
+    $sql_zinema = "SELECT z.izena FROM zinema z JOIN saioa s USING (idZinema) JOIN filma f USING (idFilma) WHERE f.izena = '$info_filma' GROUP BY z.idZinema";
     //kontsulta egin db
-    $result = $mysqli->query($sql);
+    $result_zinema = $mysqli->query($sql_zinema);
 
-    if ($result && $result->num_rows > 0) {
-      // Iniciar sesión y redirigir al usuario a la página de inicio
-      $_SESSION['erabiltzailea'] =  $erabiltzailea;
-      header("Location: sarrerak.php");
-      exit;
-    } else {
-      // Mostrar un mensaje de error si la autenticación falla
-      echo "'Pasahitza edo erabiltzailea ez dira zuzenak'";
+    if(isset($_GET['zinema_aukera'])) {
+        $zinemaSeleccionatua = $_GET['zinema_aukera'];
+        echo "<h1>$zinemaSeleccionatua</h1>";
     }
 
   // Konexioa itxi
@@ -48,9 +39,7 @@ if(isset($_POST['data'])) {
   echo $data;
 }
 
-$_SESSION['zinema'];
 $_SESSION['data'] = $data;
-$_SESSION['saioa'];
 
 ?>
 
@@ -60,7 +49,7 @@ $_SESSION['saioa'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/login.css">
-    <link rel="shortcut icon" href="../html/logoa/logoa.png">
+    <link rel="shortcut icon" href="../html/logoa/logoa_karratu.png">
     <title>Erosketa</title>
 </head>
 <body id="sarrerak_body">
@@ -73,7 +62,17 @@ $_SESSION['saioa'];
             <input type="text" name="filma_aukera" id="filma_aukera" disabled value="<?php echo $info_filma; ?>"><br><br>
 
             <label for="zinema_aukera">Zinema aukeratu:</label><br>
-            <select name="zinema_aukera" id="zinema_aukera"></select><br><br>
+            <select name="zinema_aukera" id="zinema_aukera">
+            <?php
+                if ($result_zinema && $result_zinema->num_rows > 0) {
+                    while ($row = $result_zinema->fetch_assoc()) {
+                        echo "<option value='" . $row['izena'] . "'>" . $row['izena'] . "</option>";
+                    }
+                } else {
+                    echo "<option value=''>No se encontraron zinemak</option>";
+                }
+            ?>
+            </select><br><br>
 
             <label for="data_aukera">Aukeratu data:</label><br>
             <input type="date" name="data_aukera" id="data_aukera"><br><br>
@@ -98,6 +97,17 @@ $_SESSION['saioa'];
 
         document.getElementById('erosketaForm').submit();
     }
+
+    var zinemaSelect = document.getElementById("zinema_aukera");
+    zinemaSelect.addEventListener("change", function() {
+    var zinemaSeleccionatua = this.value;
+
+    var nuevaURL = `erosketak.php?zinema_aukera=${zinemaSeleccionatua}`;
+
+    // Actualizar la URL sin recargar la página
+    window.history.pushState({ path: nuevaURL }, '', nuevaURL);
+});
+
 </script>
 </body>
 </html>
