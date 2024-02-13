@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$info_filma = 'DEJAME SALIR';
+$info_filma = 'Get Out';
 
 // SESSION aldagaian batean informazioa gorde egiten du.
 $_SESSION['info_filma'] = $info_filma;

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$info_filma = 'EXPEDIENTE WARREN';
+$info_filma = 'Expediente Warren: The Conjuring';
 
 // SESSION aldagaian batean informazioa gorde egiten du.
 $_SESSION['info_filma'] = $info_filma;

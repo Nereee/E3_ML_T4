@@ -5,12 +5,41 @@ if(isset($_SESSION['info_filma'])) {
   $info_filma = $_SESSION['info_filma'];
 }
 
-if(isset($_POST['data'])) {
-    $data = $_POST['data'];
-    $_SESSION['data'] = $data;
-  } else {
-    $_SESSION['data'] = "No se recibió ninguna fecha.";
-  }
+if(isset($_SESSION['zinema'])) {
+  $zinema = $_SESSION['zinema'];
+}
+
+if(isset($_SESSION['data'])) {
+  $data = $_SESSION['data'];
+}
+
+if(isset($_SESSION['saioa'])) {
+  $saioa = $_SESSION['saioa'];
+}
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$db = "db_ElorrietaZinema";
+
+$mysqli = new mysqli($servername, $username, $password, $db);
+
+if ($mysqli->connect_error) {
+  die("Connection failed: " . $mysqli->connect_error);
+}
+
+$sql_aretoa = "SELECT a.izena
+                FROM aretoa a 
+                JOIN saioa s USING (idAretoa) 
+                JOIN zinema z ON s.idZinema = z.idZinema 
+                JOIN filma f USING (idFilma) 
+                WHERE s.ordua = '$saioa' AND s.eguna = '$data' AND z.izena = '$zinema' AND f.izena = '$info_filma'
+                group by s.eguna";
+
+$result_aretoa = $mysqli->query($sql_aretoa);
+
+$mysqli->close();
+
 ?>
 
 <!DOCTYPE html>
@@ -30,15 +59,24 @@ if(isset($_POST['data'])) {
             </a>
             <h1>Laburpena</h1>
             <form action="get">
-
-                <!-- Agregar datos de compra aquí -->
                 <div id="laburpena">
                     <p><strong>Pelíkula:</strong> <?php echo $info_filma; ?></p>
                     <p><strong>Data:</strong> <?php echo $data; ?></p>
-                    <p><strong>Zinema:</strong> <?php echo $_GET['cine'] ?? 'Nombre del Cine'; ?></p>
-                    <p><strong>Sarrera kopuru:</strong> <?php echo $_GET['cantidad_entradas'] ?? 0; ?></p>
-                    <p><strong>PVP:</strong> <?php echo $_GET['pvp'] ?? 0; ?></p>
-                    <p><strong>Deskontua:</strong> <?php echo $_GET['descuento'] ?? 0; ?>%</p>
+                    <p><strong>Zinema:</strong> <?php echo $zinema; ?></p>
+                    <p><strong>Saioa:</strong> <?php echo $saioa; ?></p>
+                    <p><strong>Aretoa:</strong>
+                    <?php
+                    if ($result_aretoa) {
+                      if ($result_aretoa->num_rows > 0) {
+                          while ($row = $result_aretoa->fetch_assoc()) {
+                              echo $row['izena'] . " Aretoa";
+                          }
+                      }
+                    }
+                    ?></p>
+                    <p><strong>Sarrera kopuru:</strong></p>
+                    <p><strong>PVP:</strong></p>
+                    <p><strong>Deskontua:</strong></p>
                 </div>
 
                 <br><br>
@@ -48,7 +86,6 @@ if(isset($_POST['data'])) {
         </div>
     </main>
     <script>
-      data_aukera.min = new Date().toLocaleDateString('fr-ca');
     </script>
 </body>
 </html>

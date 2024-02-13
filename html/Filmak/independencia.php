@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$info_filma = 'El Dia De La Independencia';
+$info_filma = 'Dia de la Independencia';
 
 // SESSION aldagaian batean informazioa gorde egiten du.
 $_SESSION['info_filma'] = $info_filma;

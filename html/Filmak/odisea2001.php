@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$info_filma = 'Odisea 2001';
+$info_filma = '2001: Odisea en el espacio';
 
 // SESSION aldagaian batean informazioa gorde egiten du.
 $_SESSION['info_filma'] = $info_filma;

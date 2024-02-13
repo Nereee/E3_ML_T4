@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$info_filma = 'Dracula';
+$info_filma = 'Drácula';
 
 // SESSION aldagaian batean informazioa gorde egiten du.
 $_SESSION['info_filma'] = $info_filma;

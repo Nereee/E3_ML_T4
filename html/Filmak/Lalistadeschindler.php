@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$info_filma = 'LA LISTA DE SCHINDLER';
+$info_filma = 'La lista de Schindler';
 
 // SESSION aldagaian batean informazioa gorde egiten du.
 $_SESSION['info_filma'] = $info_filma;
