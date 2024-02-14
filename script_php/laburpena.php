@@ -47,6 +47,9 @@ $sql_aretoa = "SELECT a.izena
 
 $result_aretoa = $mysqli->query($sql_aretoa);
 
+
+// AQUI VA EL INSEERT LUEGO
+
 $mysqli->close();
 
 ?>
@@ -67,7 +70,7 @@ $mysqli->close();
                 <img id="buelta" src="../html/irudiak/login/cross-svgrepo-com.svg" alt="buelta">
             </a>
             <h1>Laburpena</h1>
-            <form action="get">
+            <form action="laburpena.php" method="POST">
                 <div id="laburpena">
                     <p><strong>Pelíkula:</strong> <?php echo $info_filma; ?></p>
                     <p><strong>Data:</strong> <?php echo $data; ?></p>
@@ -85,16 +88,36 @@ $mysqli->close();
                     ?></p>
                     <p><strong>Sarrera kopuru:</strong> <?php echo $koptotala . " sarrera"; ?></p>
                     <p><strong>PVP:</strong> <?php echo $subtotala . "€"; ?></p>
-                    <p><strong>Deskontua:</strong></p>
+										<p><strong>Deskontua:</strong> <span id="deskontuaValue"></span>€</p>
                 </div>
 
                 <br><br>
 
-                <input type="button" id="jarraitu" value="Baieztatu" onclick="window.location.href = '../html/index.html'">
+                <input type="submit" id="jarraitu" value="Baieztatu" onclick="window.location.href = '../html/index.html'">
             </form>
         </div>
     </main>
     <script>
+
+		var kantitate = '<?php echo $koptotala; ?>';
+		var subtotala = '<?php echo $subtotala; ?>';
+
+		var deskontua = 0;
+		var totala = 0;
+
+		let deskontuBI = 0.2;
+		let deskontuGEHIA = 0.3;
+
+		if (kantitate == 2) {
+			deskontua = subtotala * deskontuBI;
+		}else if (kantitate > 2) {
+			deskontua = subtotala * deskontuGEHIA;
+		}
+
+		totala = subtotala - deskontua;
+
+		document.getElementById('deskontuaValue').textContent = totala;
+
     </script>
 </body>
 </html>
