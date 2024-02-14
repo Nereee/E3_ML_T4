@@ -16,7 +16,6 @@ if (isset($_POST['erabiltzailea']) && isset($_POST['pasahitza'])) {
     // Konexioa egiaztatu
     if ($mysqli->connect_error) {
         die("Connection failed: " . $mysqli->connect_error);
-        echo "<h1>NO FUNCIONA</h1>";
     }
 
     // Kontsulta

@@ -1,25 +1,20 @@
 <?php
-
 session_start();
 
-
-if(isset($_GET['KopuruTotala'])) {
-	$KopuruTotala = $_GET['KopuruTotala'];  
-	$_SESSION['koptotala'] = $KopuruTotala;
+// Sarreren kopuru osoa eta subtotala balioak hartzen badu, sesio aldagai batean gordetzen du eta beste orrialde
+// batera joango da.
+if(isset($_POST['koptotala']) && isset($_POST['subtotala'])) {
+	
+    $_SESSION['koptotala'] = $_POST['koptotala'];
+    $_SESSION['subtotala'] = $_POST['subtotala'];
+	
+    header ('Location: erosketak.php');
+    exit; 
 }
 
-if(isset($_GET['Subtotala'])) {
-	$Subtotala = $_GET['Subtotala'];  
-	$_SESSION['subtotala'] = $Subtotala;
-}
-
-if(isset($_GET['normal_mota'])) {
-	$normala_sarrera = $_GET['normal_mota'];  
-	$_SESSION['normal_mota'] = $normala_sarrera;
-}
 
 ?>
-
+	
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -59,7 +54,7 @@ if(isset($_GET['normal_mota'])) {
 			<div id="sarrera_kutxa">
 				<h2>Hautatu sarrera mota:</h2>
 				<hr>
-				<form action="sarrerak.php" method="GET">
+				<form action="sarrerak.php" method="POST">
 					<div id="sarrerak">
 						<div id="normala" class="mota">
 							<label for="normal_mota">Tartalo (Ohiko sarrera) (8.90€)</label>
@@ -95,16 +90,16 @@ if(isset($_GET['normal_mota'])) {
 						</div>
 						<div id="espazioa">
 							<h1>a</h1><h1>a</h1><h1>a</h1>
-							<input type="number" name="koptotala" id="koptotala" disabled onclick="prezioak()">
+							<input type="text" name="koptotala" id="koptotala" disabled onclick="prezioak()">
 						</div>
 						<div id="totala">
 							<div id="totala_kutxa">
 								<label for="subtotala" id="subtotala_label"><b>Subtotala:</b></label>
-								<input type="number" name="subtotala" id="subtotala" value="0.00" disabled>
+								<input type="text" name="subtotala" id="subtotala" value="0.00" disabled>
 							</div>
 							<div id="botoiak">
-								<input type="button" value="Ikusi subtotala guztia" onclick="prezioak(), GehituURL()">
-								<input type="button" value="Jarraitu" id="jarraitu_btn" disabled onclick="prezioak(), window.location.href = 'erosketak.php', GehituURL()">
+								<input type="button" id="kalkulu" value="Ikusi subtotala guztia" onclick="prezioak()">
+								<input type="submit" value="Jarraitu" id="jarraitu_btn" disabled onclick="prezioak()">
 							</div>
 						</div>
 					</div>
@@ -129,8 +124,6 @@ if(isset($_GET['normal_mota'])) {
 		let normala_kop = parseInt(document.getElementById("normal_mota").value);
 		let gaztea_kop = parseInt(document.getElementById("gaztea_mota").value);
 		let jubilatu_kop = parseInt(document.getElementById("jubilatu_mota").value);
-
-		let subtotala = 0;
 
 		if (normala_kop > 0) {
 			subtotala += normala_kop * norm_prezioa;
@@ -158,15 +151,6 @@ if(isset($_GET['normal_mota'])) {
 
 	}
 
-	function GehituURL() {
-
-        var koptotala = document.getElementById("koptotala").value;
-        var URLparametroak = new URLSearchParams(window.location.search);
-        URLparametroak.set("KopuruTotala", koptotala);
-        window.location.href = "?" + URLparametroak.toString();     
-    
-	}
-
 	function gehitu(sarrera) {
 		var kop = parseInt(sarrera.value);
 		kop++;
@@ -182,16 +166,11 @@ if(isset($_GET['normal_mota'])) {
 		}
 	}
 
-	window.onload = function() {
-	var normala_sarrera = '<?php echo isset($normala_sarrera) ? $normala_sarrera : ''; ?>';
-		if (normala_sarrera !== '') {
-			document.getElementById("normal_mota").value = parseInt(normala_sarrera);
-		} else {
-			document.getElementById("normal_mota").value = 0; // O cualquier otro valor predeterminado
-		}
-	};
-
-
+	// PHP balioak artzeko INPUT-ak ezin dira disabled egon.
+	document.getElementById("kalkulu").addEventListener("click", function() {
+		document.getElementById("koptotala").disabled = false;
+    	document.getElementById("subtotala").disabled = false;
+	});
     </script>
     <footer>
 		<div id="info">

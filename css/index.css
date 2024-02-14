@@ -233,7 +233,7 @@ section h3 {
   text-align: end;
 }
 
-#botoiak input[type="button"] {
+#botoiak input[type="button"], #botoiak input[type="submit"] {
   padding: 10px 20px;
   border-radius: 5px;
   border: none;
@@ -244,7 +244,7 @@ section h3 {
   transition: background-color 0.3s ease;
 }
 
-#botoiak input[type="button"]:disabled {
+#botoiak input[type="button"]:disabled, #botoiak input[type="submit"]:disabled {
   background-color: #ccc;
   cursor: not-allowed;
 }
