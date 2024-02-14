@@ -206,9 +206,10 @@ section h3 {
   flex: 1;
 }
 
-#espazioa h1 {
+#espazioa h1, #koptotala {
   visibility: hidden;
 }
+
 
 .kantitate_kutxa {
   display: flex;

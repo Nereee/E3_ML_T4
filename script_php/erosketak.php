@@ -212,8 +212,6 @@ function Bidali() {
         alert("Eremu guztiak bete behar dira");
     }
 }
-
-
 </script>
 </body>
 </html>

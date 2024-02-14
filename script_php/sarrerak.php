@@ -1,5 +1,23 @@
 <?php
 
+session_start();
+
+
+if(isset($_GET['KopuruTotala'])) {
+	$KopuruTotala = $_GET['KopuruTotala'];  
+	$_SESSION['koptotala'] = $KopuruTotala;
+}
+
+if(isset($_GET['Subtotala'])) {
+	$Subtotala = $_GET['Subtotala'];  
+	$_SESSION['subtotala'] = $Subtotala;
+}
+
+if(isset($_GET['normal_mota'])) {
+	$normala_sarrera = $_GET['normal_mota'];  
+	$_SESSION['normal_mota'] = $normala_sarrera;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +59,7 @@
 			<div id="sarrera_kutxa">
 				<h2>Hautatu sarrera mota:</h2>
 				<hr>
-				<form action="get">
+				<form action="sarrerak.php" method="GET">
 					<div id="sarrerak">
 						<div id="normala" class="mota">
 							<label for="normal_mota">Tartalo (Ohiko sarrera) (8.90€)</label>
@@ -77,6 +95,7 @@
 						</div>
 						<div id="espazioa">
 							<h1>a</h1><h1>a</h1><h1>a</h1>
+							<input type="number" name="koptotala" id="koptotala" disabled onclick="prezioak()">
 						</div>
 						<div id="totala">
 							<div id="totala_kutxa">
@@ -84,8 +103,8 @@
 								<input type="number" name="subtotala" id="subtotala" value="0.00" disabled>
 							</div>
 							<div id="botoiak">
-								<input type="button" value="Ikusi subtotala guztia" onclick="prezioak()">
-								<input type="button" value="Jarraitu" id="jarraitu_btn" disabled onclick="prezioak(), window.location.href = 'erosketak.php'">
+								<input type="button" value="Ikusi subtotala guztia" onclick="prezioak(), GehituURL()">
+								<input type="button" value="Jarraitu" id="jarraitu_btn" disabled onclick="prezioak(), window.location.href = 'erosketak.php', GehituURL()">
 							</div>
 						</div>
 					</div>
@@ -94,50 +113,85 @@
 		</div>
 	</main>	
     <script>
-      let esp_prezioa = 6.90;
-      let norm_prezioa = 8.90;
-      let subtotala = 0;
 
-      function prezioak() {
-        let normala_kop = parseInt(document.getElementById("normal_mota").value);
-    		let gaztea_kop = parseInt(document.getElementById("gaztea_mota").value);
-    		let jubilatu_kop = parseInt(document.getElementById("jubilatu_mota").value);
+	var kop_totala = 0;
 
-        let subtotala = 0;
+	var totala_normala = 0;
+	var totala_gaztea = 0;
+	var totala_jubilatu = 0;
 
-        if (normala_kop > 0) {
-            subtotala += normala_kop * norm_prezioa;
-        }
+	var subtotala = 0;
 
-        if (gaztea_kop > 0) {
-            subtotala += gaztea_kop * esp_prezioa;
-        }
-                          
-        if (jubilatu_kop > 0) {
-            subtotala += jubilatu_kop * esp_prezioa;
-        }
+	let esp_prezioa = 6.90;
+	let norm_prezioa = 8.90;
 
-        document.getElementById("subtotala").value = subtotala.toFixed(2); 
+	function prezioak() {
+		let normala_kop = parseInt(document.getElementById("normal_mota").value);
+		let gaztea_kop = parseInt(document.getElementById("gaztea_mota").value);
+		let jubilatu_kop = parseInt(document.getElementById("jubilatu_mota").value);
 
-        if (subtotala > 0) {
-            document.getElementById("jarraitu_btn").disabled = false;
-        }
-			}
+		let subtotala = 0;
 
-      function gehitu(sarrera) {
-        var kop = parseInt(sarrera.value);
-        kop++;
-        sarrera.value = kop;
-      }
+		if (normala_kop > 0) {
+			subtotala += normala_kop * norm_prezioa;
+			totala_normala = normala_kop;
+		}
+
+		if (gaztea_kop > 0) {
+			subtotala += gaztea_kop * esp_prezioa;
+			totala_gaztea = gaztea_kop;
+		}
+							
+		if (jubilatu_kop > 0) {
+			subtotala += jubilatu_kop * esp_prezioa;
+			totala_jubilatu = jubilatu_kop;
+		}
+
+		document.getElementById("subtotala").value = subtotala.toFixed(2); 
+
+		if (subtotala > 0) {
+			document.getElementById("jarraitu_btn").disabled = false;
+		}
+
+		kop_totala = totala_normala + totala_gaztea + totala_jubilatu;
+		document.getElementById("koptotala").value = kop_totala;
+
+	}
+
+	function GehituURL() {
+
+        var koptotala = document.getElementById("koptotala").value;
+        var URLparametroak = new URLSearchParams(window.location.search);
+        URLparametroak.set("KopuruTotala", koptotala);
+        window.location.href = "?" + URLparametroak.toString();     
     
-      function kendu(sarrera) {
-        var kop = parseInt(sarrera.value);
-    
-        if (kop != 0) {
-            kop--;
-            sarrera.value = kop;
-        }
-      }
+	}
+
+	function gehitu(sarrera) {
+		var kop = parseInt(sarrera.value);
+		kop++;
+		sarrera.value = kop;
+	}
+		
+	function kendu(sarrera) {
+		var kop = parseInt(sarrera.value);
+		
+		if (kop != 0) {
+			kop--;
+			sarrera.value = kop;
+		}
+	}
+
+	window.onload = function() {
+	var normala_sarrera = '<?php echo isset($normala_sarrera) ? $normala_sarrera : ''; ?>';
+		if (normala_sarrera !== '') {
+			document.getElementById("normal_mota").value = parseInt(normala_sarrera);
+		} else {
+			document.getElementById("normal_mota").value = 0; // O cualquier otro valor predeterminado
+		}
+	};
+
+
     </script>
     <footer>
 		<div id="info">

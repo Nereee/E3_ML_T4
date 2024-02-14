@@ -17,6 +17,15 @@ if(isset($_SESSION['saioa'])) {
   $saioa = $_SESSION['saioa'];
 }
 
+if(isset($_SESSION['subtotala'])) {
+  $subtotala = $_SESSION['subtotala'];
+}
+
+if(isset($_SESSION['koptotala'])) {
+  $koptotala = $_SESSION['koptotala'];
+}
+
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -74,8 +83,8 @@ $mysqli->close();
                       }
                     }
                     ?></p>
-                    <p><strong>Sarrera kopuru:</strong></p>
-                    <p><strong>PVP:</strong></p>
+                    <p><strong>Sarrera kopuru:</strong> <?php echo $koptotala . " sarrera"; ?></p>
+                    <p><strong>PVP:</strong> <?php echo $subtotala . "€"; ?></p>
                     <p><strong>Deskontua:</strong></p>
                 </div>
 
