@@ -5,7 +5,7 @@ session_start();
 $servername = "localhost";
 $username = "root";
 $password = "";
-$db = "db_ElorrietaZinema";
+$db = "db_ElorrietaZinemaT4";
 
 // Konexioa sortu
 $mysqli = new mysqli($servername, $username, $password, $db);

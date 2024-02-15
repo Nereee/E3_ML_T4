@@ -29,7 +29,7 @@ if(isset($_SESSION['koptotala'])) {
 $servername = "localhost";
 $username = "root";
 $password = "";
-$db = "db_ElorrietaZinema";
+$db = "db_ElorrietaZinemaT4";
 
 $mysqli = new mysqli($servername, $username, $password, $db);
 

@@ -99,7 +99,7 @@ if(isset($_POST['koptotala']) && isset($_POST['subtotala'])) {
 							</div>
 							<div id="botoiak">
 								<input type="button" id="kalkulu" value="Ikusi subtotala guztia" onclick="prezioak()">
-								<input type="submit" value="Jarraitu" id="jarraitu_btn" disabled onclick="prezioak()">
+								<input type="submit" value="Jarraitu" id="jarraitu_btn" disabled>
 							</div>
 						</div>
 					</div>
@@ -155,6 +155,8 @@ if(isset($_POST['koptotala']) && isset($_POST['subtotala'])) {
 		var kop = parseInt(sarrera.value);
 		kop++;
 		sarrera.value = kop;
+
+		aldaketakBaieztatu()
 	}
 		
 	function kendu(sarrera) {
@@ -164,6 +166,8 @@ if(isset($_POST['koptotala']) && isset($_POST['subtotala'])) {
 			kop--;
 			sarrera.value = kop;
 		}
+
+		aldaketakBaieztatu()
 	}
 
 	// PHP balioak artzeko INPUT-ak ezin dira disabled egon.
@@ -171,6 +175,12 @@ if(isset($_POST['koptotala']) && isset($_POST['subtotala'])) {
 		document.getElementById("koptotala").disabled = false;
     	document.getElementById("subtotala").disabled = false;
 	});
+
+	function aldaketakBaieztatu() {
+    	document.getElementById("jarraitu_btn").disabled = true;
+	}
+
+	
     </script>
     <footer>
 		<div id="info">
