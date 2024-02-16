@@ -1,86 +1,82 @@
+<?php
+session_start();
+
+$info_filma = 'SCARY MOVIE';
+
+// SESSION aldagaian batean informazioa gorde egiten du.
+$_SESSION['info_filma'] = $info_filma;
+?>
+
 <!DOCTYPE html>
-<html lang="eu">
+<html lang="es">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elorrieta Zinema</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/media.css">
-    <link rel="shortcut icon" href="logoa/logoa.png">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/media.css">
+    <link rel="stylesheet" href="../../css/plantilla_filma.css">
+    <link rel="shortcut icon" href="../logoa/logoa_karratu.png">
+    <title>PHIM Zinemak</title>
   </head>
   <body>
-    <header>
-      <nav>
-        <div class="logo">
-          <img src="logoa/logoa.png" alt="Logo">
-        </div>
-        <div class="menu-toggle" id="mobile-menu" onclick="MenuAldaketa()">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
-        <div class="menu" id="menu">
-          <a href="index.html">Hasiera</a>
-          <a href="filma_guztiak.html">Filmak</a>
-          <a href="norgara.html">Informazioa</a>
-          <a href="eskaintzak.html">Eskaintzak</a>
-        </div>
-        <script>
-          function MenuAldaketa() {
-            document.getElementById("menu").classList.toggle("active");
-            document.getElementById("mobile-menu").classList.toggle("active");
-          }
-        </script>
-      </nav>
-    </header>
+    <nav>
+      <div class="logo">
+        <img src="../logoa/logoa.png" alt="Logo">
+      </div>
+      <div class="menu-toggle" id="mobile-menu" onclick="MenuAldaketa()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <div class="menu" id="menu">
+        <a href="../index.html">Hasiera</a>
+        <a href="../filma_guztiak.html">Filmak</a>
+        <a href="../norgara.html">Informazioa</a>
+        <a href="../eskaintzak.html">Eskaintzak</a> 
+      </div>
+      <script>
+        function MenuAldaketa() {
+          document.getElementById("menu").classList.toggle("active");
+          document.getElementById("mobile-menu").classList.toggle("active");
+        }
+      </script>
+    </nav>
     <main>
-      <section>
-        <div class="infodiv">
-          <h3>GURE HISTORIA</h3>
-          <div id="guk" >
-            <div class="informazioa">
-              <p>
-                <strong>GURI BURUZ</strong>
-                <br>
-                <br>
-                <b>Elorrieta Zinemak,</b> zinema soil bat baino gehiago da.
-                <br>
-                <br>
-                Zinema hainbat ikusleen esperientzia handitu nahi duena da.
-                <br>
-                <br>
-                Gure helburua, gure istorioekin konektatu eta pantailatik kanpo
-                mundu desberdinak esploratzea da. Pozez, beldurrez,
-                zientzia-fikzioaz eta barrez beteriko unibertso batera eramatea.
-                <br>
-                <br>
-                <br>
-                <strong>NOLA EGITEN DUGU LAN</strong>
-                <br>
-                <br>
-                Larunbatetan 8 ordu ditugu, eta igandeetan 6 ordu zure esku
-                dauden filmetan aukeratzeko. 4 genero-filma eta 4 film genero
-                bakoitzeko ikusi ahal izango duzu.
-                <br>
-                <br>
-                Egunean genero bakoitzeko film bakarra ikusteko aukera izango
-                duzu, eta asteburu bakoitzean bakarrik genero berdineko bi
-                pelikula hautatu dezakezu eta pelikulak ezin dira errepikatu
-                egun berdinean.
-                <br>
-                <br>
-                Hiru baldintza betetzen badituzu, askatasun osoa izango duzu zuk
-                nahi duzun filma aukeratzeko.
-                <br>
-                <br>
-                Hau guztiaz gozatzeko hainbat zinema aretoak ditugu Bizkaia
-                osoan. Hauek aurkitzeko <b>erreserben</b> pantailan sartu.
-              </p>
+        <section>
+            <div class="infofilma">
+                <img src="../irudiak/filmaPortadak/scary_movie.jpg" alt="scary_movie">
+                <div class="erdikoa">
+                    <h1 id="tituloa">SCARY MOVIE</h1>
+                    <h3>Egilea:</h3>
+                        <p>Keenen Ivory Wayans</p>
+                    <h3>Aktore Nagusiak:</h3>
+                        <p>	
+                            Anna Faris, Regina Hall, Shannon Elizabeth, Jon Abrahams, Kurt Fuller <br>
+                            Carmen Electra, Lochlyn Munro, Cheri Oteri
+                        </p>
+                    <h3>Laburpena:</h3>
+                        <p>Gail Hailstorn periodista hirira iritsi da, Cindy Campbell eta bere lagunak galdekatzera. Pixkanaka, 
+                            gure protagonisten hilketek eta hormonek irakin egingo dute, serieko hiltzaile honen benetako asmoak argituz.
+                        </p>
+                </div>
+                <div class="ezkuina">
+                    <h3>Iraupena:</h3> 
+                    <p> Ordu bat eta 28 minutu </p>
+                    <h3>Estreinaldia:</h3>
+                    <p>2000ko Urriaren 31</p>
+                    <h3>Generoa:</h3>
+                    <p>Komedia</p>
+                </div>
             </div>
-          </div>
-        </div>
-      </section>
+            <div id="trailer">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/SzpGYrrcJZw?si=V9e40lKQce77fRFP" 
+                title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; 
+                encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            
+            <input type= "button" id = "erosiBotoia" value = "Erosi Sarrerak" onclick = "  window.location.href = ' ../../script_php/login.php'  ">
+
+        </section>
     </main>
     <footer>
       <div id="info">

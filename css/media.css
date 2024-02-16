@@ -30,8 +30,10 @@
         padding-left: 0;
     }
 
-    #aretokutxa, #gureinfokutxa {
-        padding-left: 0;
+    #guk {
+      background-image: none;
+      padding: 0;
+      text-align: center;
     }
   
   }
@@ -47,6 +49,14 @@
 
     .kantitate_kutxa {
       justify-content: space-between;
+    }
+
+    .argazki_kutxa {
+      padding: 100px 0;
+    }
+
+    #sarreramota {
+      text-align: center;
     }
   }
   
@@ -81,5 +91,17 @@
 
     #totala_kutxa  {
       flex-direction: column;
+    }
+
+    #sarrera_kutxa {
+      width: 100%;
+    }
+
+    #sarrera_kutxa h2 {
+      text-align: center;
+    }
+
+    #sarrerak {
+      padding: 10px;
     }
   }

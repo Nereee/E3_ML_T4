@@ -127,6 +127,7 @@ svg:hover {
   filter: grayscale(0);
 }
 
-
-
-
+.copy {
+  text-decoration: underline;
+  color: white;
+}

@@ -1,86 +1,95 @@
+<?php
+
+// archivo1.php
+// Define tu HTML como una cadena
+$html = '<h1 id="tituloa">TITULO</h1>';
+
+// Crea un nuevo objeto DOMDocument
+$dom = new DOMDocument();
+
+// Carga el HTML en el objeto DOMDocument, ignorando los errores de HTML si los hay
+$dom->loadHTML($html, LIBXML_HTML_NOERROR);
+
+// Encuentra el elemento h1 por su ID
+$h1Elemento = $dom->getElementById('infoPeli');
+
+// Obtiene el contenido del h1 y lo guarda en una variable global
+$GLOBALS['contenidoH1'] = $h1Elemento->nodeValue;
+
+?>
+
+
+
 <!DOCTYPE html>
-<html lang="eu">
+<html lang="es">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elorrieta Zinema</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/media.css">
-    <link rel="shortcut icon" href="logoa/logoa.png">
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <link rel="stylesheet" href="../../css/style.css" >
+    <link rel="stylesheet" href="../../css/media.css" >
+    <link rel="stylesheet" href="/../css/plantilla_filma.css">
+    <link rel="shortcut icon" href="../logoa/logoa.png" >
+    <title>PHIM Zinemak</title>
   </head>
   <body>
-    <header>
-      <nav>
-        <div class="logo">
-          <img src="logoa/logoa.png" alt="Logo">
-        </div>
-        <div class="menu-toggle" id="mobile-menu" onclick="MenuAldaketa()">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
-        <div class="menu" id="menu">
-          <a href="index.html">Hasiera</a>
-          <a href="filma_guztiak.html">Filmak</a>
-          <a href="norgara.html">Informazioa</a>
-          <a href="eskaintzak.html">Eskaintzak</a>
-        </div>
-        <script>
-          function MenuAldaketa() {
-            document.getElementById("menu").classList.toggle("active");
-            document.getElementById("mobile-menu").classList.toggle("active");
-          }
-        </script>
-      </nav>
-    </header>
+    <nav>
+      <div class="logo">
+        <img src="../logoa/logoa.png" alt="Logo" >
+      </div>
+      <div class="menu-toggle" id="mobile-menu" onclick="MenuAldaketa()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <div class="menu" id="menu">
+        <a href="../index.html">Hasiera</a>
+        <a href="../filma_guztiak.html">Filmak</a>
+        <a href="../norgara.html">Informazioa</a>
+        <a href="../eskaintzak.html">Eskaintzak</a>
+        
+      </div>
+      <script>
+        function MenuAldaketa() {
+          document.getElementById("menu").classList.toggle("active");
+          document.getElementById("mobile-menu").classList.toggle("active");
+        }
+      </script>
+    </nav>
     <main>
-      <section>
-        <div class="infodiv">
-          <h3>GURE HISTORIA</h3>
-          <div id="guk" >
-            <div class="informazioa">
-              <p>
-                <strong>GURI BURUZ</strong>
-                <br>
-                <br>
-                <b>Elorrieta Zinemak,</b> zinema soil bat baino gehiago da.
-                <br>
-                <br>
-                Zinema hainbat ikusleen esperientzia handitu nahi duena da.
-                <br>
-                <br>
-                Gure helburua, gure istorioekin konektatu eta pantailatik kanpo
-                mundu desberdinak esploratzea da. Pozez, beldurrez,
-                zientzia-fikzioaz eta barrez beteriko unibertso batera eramatea.
-                <br>
-                <br>
-                <br>
-                <strong>NOLA EGITEN DUGU LAN</strong>
-                <br>
-                <br>
-                Larunbatetan 8 ordu ditugu, eta igandeetan 6 ordu zure esku
-                dauden filmetan aukeratzeko. 4 genero-filma eta 4 film genero
-                bakoitzeko ikusi ahal izango duzu.
-                <br>
-                <br>
-                Egunean genero bakoitzeko film bakarra ikusteko aukera izango
-                duzu, eta asteburu bakoitzean bakarrik genero berdineko bi
-                pelikula hautatu dezakezu eta pelikulak ezin dira errepikatu
-                egun berdinean.
-                <br>
-                <br>
-                Hiru baldintza betetzen badituzu, askatasun osoa izango duzu zuk
-                nahi duzun filma aukeratzeko.
-                <br>
-                <br>
-                Hau guztiaz gozatzeko hainbat zinema aretoak ditugu Bizkaia
-                osoan. Hauek aurkitzeko <b>erreserben</b> pantailan sartu.
-              </p>
+    <section>
+            <div class="infofilma">
+                <img src="../irudiak/filmaPortadak/Alien8.jpg" alt="Alien8">
+                <div class="erdikoa">
+                    <h1 id="tituloa">ALIEN 8</h1>
+                    <h3>Egilea:</h3>
+                        <p>Dan O'bannon eta Ronald Shusett </p>
+                    <h3>Aktore Nagusiak:</h3>
+                        <p>Sigourney Weaver, Tom Skerritt, Veronica Cartwright, <br>
+                            John Hurt, Ian Holm eta Harry Dean Stanton
+                        </p>
+                    <h3>Laburpena:</h3>
+                        <p> Nostromo espazio-atoiontziko tripulazioak laguntza-seinale bat hartu du,
+                            eta, jakin gabe, estralurtarren bizimodu hilgarri bat igo du ontzira.
+                        </p>
+                </div>
+                <div class="ezkuina">
+                    <h3>Iraupena:</h3> 
+                    <p> Ordu bat eta 57 minutu </p>
+                    <h3>Estreinaldia:</h3>
+                    <p> 1979ko Irailaren 25a </p>
+                    <h3>Generoa:</h3>
+                    <p>Zientzia-fikzioa</p>
+                </div>
             </div>
-          </div>
-        </div>
-      </section>
+            <div id="trailer">
+                <iframe width="650" height="406" src="https://www.youtube.com/embed/uhOpEUmsvMA?si=upqVLe0CMrVvMx-z" 
+                title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; 
+                encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+  
+            <input type= "button" id = "erosiBotoia" value = "Erosi Sarrerak" onclick = "  window.location.href = ' ../../script_php/login.php'  ">
+            
+          </section>
     </main>
     <footer>
       <div id="info">
@@ -98,20 +107,20 @@
         <div class="kategoriak">
           <h3>ZERBITZUAK</h3>
           <ul>
-            <li><a href="filma_guztiak.html">Filmak</a></li>
-            <li><a href="eskaintzak.html">Eskaitzak</a></li>
+            <li><a href="">Filmak</a></li>
+            <li><a href="">Eskaitzak</a></li>
           </ul>
         </div>
         <div class="kategoriak">
           <h3>BESTE ORRIAK</h3>
           <ul>
-            <li><a href="eskaintzak.html">Eskaintzak</a></li>
-            <li><a href="index.html">Hasiera</a></li>
-            <li><a href="norgara.html">Nor gara</a></li>
+            <li><a href="">Eskaintzak</a></li>
+            <li><a href="">Hasiera</a></li>
+            <li><a href="">Nor gara</a></li>
           </ul>
         </div>
       </div>
-      <hr>
+      <hr >
       <div id="footerkarratu">
         <a class="copy" href="http://creativecommons.org/ns#"
           >Lan honek CC lizentzia du
@@ -155,24 +164,25 @@
               viewBox="0 0 512 512"
               fill="#000000"
             >
-              <g stroke-width="0"></g>
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
               <g
+                id="SVGRepo_tracerCarrier"
                 stroke-linecap="round"
                 stroke-linejoin="round"
               ></g>
-              <g>
+              <g id="SVGRepo_iconCarrier">
                 <rect width="512" height="512" rx="15%" id="b"></rect>
                 <use fill="url(#a)" xlink:href="#b"></use>
                 <use fill="url(#c)" xlink:href="#b"></use>
-                <radialGradient id="a" cx=".4" cy="1" r="1">
+                <radialgradient id="a" cx=".4" cy="1" r="1">
                   <stop offset=".1" stop-color="#fd5"></stop>
                   <stop offset=".5" stop-color="#ff543e"></stop>
                   <stop offset="1" stop-color="#c837ab"></stop>
-                </radialGradient>
-                <linearGradient id="c" x2=".2" y2="1">
+                </radialgradient>
+                <lineargradient id="c" x2=".2" y2="1">
                   <stop offset=".1" stop-color="#3771c8"></stop>
                   <stop offset=".5" stop-color="#60f" stop-opacity="0"></stop>
-                </linearGradient>
+                </lineargradient>
                 <g fill="none" stroke="#ffffff" stroke-width="30">
                   <rect width="308" height="308" x="102" y="102" rx="81"></rect>
                   <circle cx="256" cy="256" r="72"></circle>
@@ -190,12 +200,13 @@
               preserveAspectRatio="xMidYMid"
               fill="#000000"
             >
-              <g stroke-width="0"></g>
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
               <g
+                id="SVGRepo_tracerCarrier"
                 stroke-linecap="round"
                 stroke-linejoin="round"
               ></g>
-              <g>
+              <g id="SVGRepo_iconCarrier">
                 <g>
                   <path
                     d="M241.871,256.001 C249.673,256.001 256,249.675 256,241.872 L256,14.129 C256,6.325 249.673,0 241.871,0 L14.129,0 C6.324,0 0,6.325 0,14.129 L0,241.872 C0,249.675 6.324,256.001 14.129,256.001 L241.871,256.001"
@@ -216,12 +227,14 @@
               role="img"
               viewBox="0 0 512 512"
               fill="#000000"
-            ><g stroke-width="0"></g>
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
               <g
+                id="SVGRepo_tracerCarrier"
                 stroke-linecap="round"
                 stroke-linejoin="round"
               ></g>
-              <g>
+              <g id="SVGRepo_iconCarrier">
                 <rect width="512" height="512" rx="15%" fill="#1da1f2"></rect>
                 <path
                   fill="#ffffff"
