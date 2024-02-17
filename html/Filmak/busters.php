@@ -29,7 +29,7 @@ $_SESSION['info_filma'] = $info_filma;
         <span class="bar"></span>
       </div>
       <div class="menu" id="menu">
-        <a href="../index.html">Hasiera</a>
+        <a href="../../index.html">Hasiera</a>
         <a href="../filma_guztiak.html">Filmak</a>
         <a href="../norgara.html">Informazioa</a>
         <a href="../eskaintzak.html">Eskaintzak</a>
@@ -94,16 +94,16 @@ $_SESSION['info_filma'] = $info_filma;
         <div class="kategoriak">
           <h3>ZERBITZUAK</h3>
           <ul>
-            <li><a href="filma_guztiak.html">Filmak</a></li>
-            <li><a href="eskaintzak.html">Eskaitzak</a></li>
+            <li><a href="../filma_guztiak.html">Filmak</a></li>
+            <li><a href="../eskaintzak.html">Eskaitzak</a></li>
           </ul>
         </div>
         <div class="kategoriak">
           <h3>BESTE ORRIAK</h3>
           <ul>
-            <li><a href="eskaintzak.html">Eskaintzak</a></li>
-            <li><a href="index.html">Hasiera</a></li>
-            <li><a href="norgara.html">Nor gara</a></li>
+            <li><a href="../eskaintzak.html">Eskaintzak</a></li>
+            <li><a href="../../index.html">Hasiera</a></li>
+            <li><a href="../norgara.html">Nor gara</a></li>
           </ul>
         </div>
       </div>

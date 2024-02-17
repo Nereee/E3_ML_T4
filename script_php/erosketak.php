@@ -82,7 +82,7 @@ $mysqli->close();
 <body id="sarrerak_body">
 <main>
     <div class="kutxa">
-        <a href="../html/index.html"><img id="buelta" src="../html/irudiak/login/cross-svgrepo-com.svg" alt="buelta"></a>
+        <a href="../index.html"><img id="buelta" src="../html/irudiak/login/cross-svgrepo-com.svg" alt="buelta"></a>
         <h1>Erosketa</h1>
         <form id="erosketaForm" action="erosketak.php" method="POST"> 
             <label for="filma_aukera">Filma aukeraketa:</label><br>

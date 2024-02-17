@@ -8,6 +8,10 @@ if(isset($_POST['koptotala']) && isset($_POST['subtotala'])) {
     $_SESSION['koptotala'] = $_POST['koptotala'];
     $_SESSION['subtotala'] = $_POST['subtotala'];
 	
+	$_SESSION['normal_mota'] = $_POST['normal_mota'];
+	$_SESSION['gaztea_mota'] = $_POST['gaztea_mota'];
+	$_SESSION['jubilatu_mota'] = $_POST['jubilatu_mota'];
+
     header ('Location: erosketak.php');
     exit; 
 }
@@ -37,10 +41,10 @@ if(isset($_POST['koptotala']) && isset($_POST['subtotala'])) {
         <span class="bar"></span>
       </div>
       <div class="menu" id="menu">
-        <a href="index.html">Hasiera</a>
-        <a href="filma_guztiak.html">Filmak</a>
-        <a href="norgara.html">Informazioa</a>
-        <a href="eskaintzak.html">Eskaintzak</a>
+        <a href="../index.html">Hasiera</a>
+        <a href="../html/filma_guztiak.html">Filmak</a>
+        <a href="../html/norgara.html">Informazioa</a>
+        <a href="../html/eskaintzak.html">Eskaintzak</a>
       </div>
       <script>
         function MenuAldaketa() {
@@ -121,26 +125,36 @@ if(isset($_POST['koptotala']) && isset($_POST['subtotala'])) {
 	let norm_prezioa = 8.90;
 
 	function prezioak() {
+		subtotala = 0.00;
+
 		let normala_kop = parseInt(document.getElementById("normal_mota").value);
 		let gaztea_kop = parseInt(document.getElementById("gaztea_mota").value);
 		let jubilatu_kop = parseInt(document.getElementById("jubilatu_mota").value);
 
-		if (normala_kop > 0) {
-			subtotala += normala_kop * norm_prezioa;
+		if (normala_kop >= 0) {
+			subtotala = subtotala + normala_kop * norm_prezioa;
 			totala_normala = normala_kop;
+			console.log (subtotala);
 		}
 
-		if (gaztea_kop > 0) {
-			subtotala += gaztea_kop * esp_prezioa;
+		if (gaztea_kop >= 0) {
+			subtotala = subtotala + gaztea_kop * esp_prezioa;
 			totala_gaztea = gaztea_kop;
 		}
 							
-		if (jubilatu_kop > 0) {
-			subtotala += jubilatu_kop * esp_prezioa;
+		if (jubilatu_kop >= 0) {
+			subtotala = subtotala + jubilatu_kop * esp_prezioa;
 			totala_jubilatu = jubilatu_kop;
 		}
 
-		document.getElementById("subtotala").value = subtotala.toFixed(2); 
+		console.log (subtotala);
+
+
+		if (subtotala == 0) {
+			document.getElementById("subtotala").value = "0.00";
+		}else {
+			document.getElementById("subtotala").value = subtotala.toFixed(2); 
+		}
 
 		if (subtotala > 0) {
 			document.getElementById("jarraitu_btn").disabled = false;
@@ -171,9 +185,13 @@ if(isset($_POST['koptotala']) && isset($_POST['subtotala'])) {
 	}
 
 	// PHP balioak artzeko INPUT-ak ezin dira disabled egon.
-	document.getElementById("kalkulu").addEventListener("click", function() {
+	document.getElementById("jarraitu_btn").addEventListener("click", function() {
 		document.getElementById("koptotala").disabled = false;
     	document.getElementById("subtotala").disabled = false;
+
+		document.getElementById("normal_mota").disabled = false;
+		document.getElementById("gaztea_mota").disabled = false;
+    	document.getElementById("jubilatu_mota").disabled = false;
 	});
 
 	function aldaketakBaieztatu() {
@@ -206,7 +224,7 @@ if(isset($_POST['koptotala']) && isset($_POST['subtotala'])) {
 			<h3>BESTE ORRIAK</h3>
 			<ul>
 			  <li><a href="../html/eskaintzak.html">Eskaintzak</a></li>
-			  <li><a href="../html/index.html">Hasiera</a></li>
+			  <li><a href="../index.html">Hasiera</a></li>
 			  <li><a href="../html/norgara.html">Nor gara</a></li>
 			</ul>
 		  </div>
