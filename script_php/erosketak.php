@@ -31,14 +31,20 @@ $sql_zinema = "SELECT z.izena
 // Egin kontsulta eta emaitza gorde:
 $result_zinema = $mysqli->query($sql_zinema);
 
+// URL barruan dagoen "Data" balioa hartu eta gorde. (Existitzen bada)
+if(isset($_GET['dataAukera'])) {
+    $data = $_GET['dataAukera']; 
+    $_SESSION['data'] = $data;
+}
+
 // ZEIN SAIOAK DAUDEN JAKITEKO KONTSULTA, BAINA BAKARRIK ZINEMA AUKERATUTA BADAGO:
-if(isset($_GET['zinemaIzena'])) {
+if(isset($_GET['zinemaIzena']) && isset($_SESSION['data'])) {
     $zinemaIzena = $_GET['zinemaIzena'];  
     $sql_saioa = "SELECT s.ordua 
                     FROM saioa s 
                     JOIN zinema z USING (idZinema) 
                     JOIN filma f USING (idFilma) 
-                    WHERE z.izena = '$zinemaIzena' AND f.izena = '$info_filma' 
+                    WHERE z.izena = '$zinemaIzena' AND f.izena = '$info_filma' AND s.Eguna = '$data'
                     GROUP BY s.ordua";
 
     // Egin kontsulta eta emaitza gorde:
@@ -46,12 +52,6 @@ if(isset($_GET['zinemaIzena'])) {
 
     // Zinemaren izena gorde, beste orrialde batean erabiltzeko:
     $_SESSION['zinema'] = $zinemaIzena;
-}
-
-// URL barruan dagoen "Data" balioa hartu eta gorde. (Existitzen bada)
-if(isset($_GET['dataAukera'])) {
-    $data = $_GET['dataAukera']; 
-    $_SESSION['data'] = $data;
 }
 
 // URL barruan dagoen "Saioa" balioa hartu eta gorde. (Existitzen bada)
@@ -155,6 +155,8 @@ $mysqli->close();
         URLparametroak.set("zinemaIzena", zinemaValue); 
         // Eguneratzen du URL-a datu berriekin eta ez ditu berridazten.
         window.location.href = "?" + URLparametroak.toString();
+
+        var dataValue = document.getElementById("data_aukera").value;
     });
 
     // Berdin berdina egiten dugu "Data" informazioarekin.
@@ -175,6 +177,14 @@ $mysqli->close();
     var AukeraketaZinema = urlParams.get('zinemaIzena');
     if (AukeraketaZinema) {
         document.getElementById("zinema_aukera").value = AukeraketaZinema;
+    }
+
+    var AukeraketaData = urlParams.get('dataAukera');
+    if (AukeraketaData) {
+        document.getElementById("data_aukera").value = AukeraketaData;
+    }
+
+    if (AukeraketaData && AukeraketaZinema) {
         // URL barruan SAIOA ez badago, saioaren balioa gordeko da.
         if (!urlParams.has('saioaAukera')) {
             var saioaValue = document.getElementById("saioa_aukera").value;
@@ -182,11 +192,6 @@ $mysqli->close();
             URLparametroak.set("saioaAukera", saioaValue);
             window.location.href = "?" + URLparametroak.toString();
         }
-    }
-
-    var AukeraketaData = urlParams.get('dataAukera');
-    if (AukeraketaData) {
-        document.getElementById("data_aukera").value = AukeraketaData;
     }
 
     var AukeraketaSaioa = urlParams.get('saioaAukera');
